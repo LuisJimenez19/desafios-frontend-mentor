@@ -95,4 +95,9 @@ textContainer.forEach((container, index) => {
 }) 
 
 
-
+const header = document.querySelector('.header');
+console.log(header)
+header.style.background = 'radial-gradient(#1e1e36e0,#1e1e36), url(/fondopy.png)'
+header.style.backgroundSize = 'cover'
+header.style.backgroundPosition = 'center'
+/* style="background: radial-gradient(#1e1e36e0,#1e1e36), url(/fondopy.png);  background-size: cover;background-position: center;" */

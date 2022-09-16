@@ -53,7 +53,7 @@ ul{
     padding: 0 0px 50px;
     overflow: hidden;
 
-    background: radial-gradient(#1e1e36e0,#1e1e36), url(/fondopy.png);
+    /* background: radial-gradient(#1e1e36e0,#1e1e36), url(/fondopy.png); */
     background-size: cover;
     background-position: center;
     
