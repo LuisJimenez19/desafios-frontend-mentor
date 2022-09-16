@@ -1,0 +1,207 @@
+:root{
+/* Primary */
+
+--Soft-blue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+
+/* Neutral */
+
+--Very-dark-main : hsl(217, 54%, 11%); /* (main BG) */
+--Very-dark-card : hsl(216, 50%, 16%); /* (card BG) */
+--Very-dark-line : hsl(215, 32%, 27%); /* (line) */
+--White: hsl(0, 0%, 100%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Outfit', sans-serif;;
+}
+
+/* --------------------------------mobile 375px----------------------------- */
+
+body{
+
+    background-color: var(--Very-dark-main);
+    width: 375px;    /* Le doy la resolución para movil */
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Very-dark-card);
+    width: 90%;     /* le doy ancho ralativo para que qeude un margen */
+    box-sizing: border-box;
+    margin: 25px auto;
+    border-radius: 10px;
+    text-align: start;
+
+}
+
+.card__image{
+
+    background-image: url(../images/image-equilibrium.jpg);
+    /* content: url(../images/image-equilibrium.jpg); */
+    width: 85%;
+    height: 280px;
+    margin: 25px auto;    
+    border-radius: 10px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.card__image__active{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:radial-gradient(circle, hsla(178, 100%, 50%, 0.1) 0%,hsla(178, 100%, 50%, 0.3) 100%);  /* corrijo la opacidad del icono y se la pongo al color de fondo */
+    opacity: 0;
+    transition: opacity .5s linear;
+    border-radius: 10px;
+    
+}
+.card__image:hover > .card__image__active {
+    opacity: 1; /* le doy toda la opacidad para que el icono conserve su color original */
+    cursor: pointer;
+}
+
+
+
+
+/* -----------el mismo ancho a las dos secciones de la card-------- */
+.card__description{
+    
+    width: 85%;
+    align-self:start;
+    margin: 0 auto 25px auto;
+    
+}
+
+.card__description-title{
+
+    color: var(--White);
+    font-weight: 600;
+    /* margin-bottom: 10px; */
+
+}
+
+.card__description-p{
+
+    color: var(--Soft-blue);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 20px auto;
+
+}
+/* estos estilos oslo son para el precio y la fecha, si esa linea que se ve */
+.card__description__value{
+
+    display: flex;
+    justify-content: space-between; /* acomodar los elementos a los lados */
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 2px var(--Very-dark-line) solid; /* hr, que separa los bloques card__description__value de card__description__author */
+}
+
+.card__description__value-et{
+
+    display: flex;
+    font-weight: 600;
+    gap: 8px;   /* espacio entre el icono y el texto */
+    color: var(--Cyan);
+
+}
+
+.card__description__value-date-time{
+
+    display: flex;
+    gap: 8px; /* espacio entre el icono y el texto */
+    color: var(--Soft-blue);
+    font-weight: 600;
+
+}
+/* fin de esos estilos para eso no mas */
+
+
+/* Estilos para el autor como solo es una linea entonces no necesite tantos contenedores */
+.card__description__author {
+
+    display: flex;
+    color: var(--Soft-blue);
+    align-items: center;
+    gap: 10px; /* espacio ntre la img y el a  */
+    margin-top: 18px;
+}
+
+
+
+.card__description__author-avatar{
+
+    border-radius: 50%;
+    border: 1px var(--White) solid;
+    width: 30px;
+
+}
+/* fin de los estilos del autor */
+
+
+/* footer */
+.attribution{
+
+    color: var(--Soft-blue);
+    font-weight: 300;
+
+}
+
+.link{
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--White);
+    transition: color .5s;
+
+}
+.link:hover{
+
+    color: var(--Cyan);
+    cursor: pointer;
+
+}
+/* fin del footer */
+
+/* ------------------------desktop------------ */
+    /* en este mediaqueri solo voy a centrar la targeta y a darle
+    los estilos al hover */
+    
+    
+@media screen and (min-width:600px) {  
+
+    body{
+
+        margin: 100px auto; /* centro la maigen un poco mas en desktop */
+        
+    }
+
+    
+
+  
+
+    .icon-view{
+
+        opacity: 1;
+        z-index: 100;
+        color: #000;
+
+    }
+}

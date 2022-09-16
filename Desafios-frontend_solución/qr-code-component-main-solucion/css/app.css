@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: outfit;
+}
+:root{
+
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(212, 45%, 89%);
+    --Grayish-blue: hsl(220, 15%, 55%);
+    --Dark-blue: hsl(218, 44%, 22%);
+
+}
+
+body{
+    
+    background-color: var(--Light-gray);
+
+}
+/* Defino el tamaño para la resolución de 375px */
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 375px; 
+    height: 680px;
+    margin: auto;
+}
+
+.main__card{
+
+    
+    background-color: var(--White);
+    padding: 20px;
+    height: 490px;
+    width: 300px;
+    margin: auto;
+    border-radius: 15px;
+    transition: box-shadow 1s;
+}
+
+
+
+
+.main__card__image{
+
+
+    width: 300px;
+    content: url(../images/image-qr-code.png);
+    border-radius: 10px;
+    margin-bottom: 25px;
+
+}
+
+.main__card__description{
+    text-align: center;
+}
+
+.main__card__description__title{
+
+    color: var(--Dark-blue);
+    font-weight: 700;
+    margin-bottom: 15px;
+
+}
+
+.main__card__description__p{
+
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--Grayish-blue);
+
+}
+
+.attribution{
+    margin: auto 0;
+    font-size: 11px;
+}
+
+.attribution a{
+
+    text-decoration: none;
+    color: var(--Dark-blue);
+    transition: color .5s;
+}
+
+
+
+/* --------------------------------desktop--------------------- */
+@media screen and (min-width:600px) {
+
+    .main{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 800px; 
+        height: 700px;
+        margin: 100px auto;
+    }
+   
+
+    .main__card:hover{
+        box-shadow: 5px 5px 25px var(--Grayish-blue),-5px -5px 25px var(--Grayish-blue);
+    }
+    .attribution a:hover {
+
+        color: var(--Grayish-blue);
+    
+    }
+}

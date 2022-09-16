@@ -1,0 +1,594 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+/* Letra body */
+/* Shadow */
+/* Mixins */
+/* titulos */
+/* Botones */
+/* estadisticas */
+/* Partials que contiene los colores y tipo de fuente*/
+* {
+  padding: 0; /* Reseteo basico */
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Opens Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 330px; /* Rango de tamaño, esto lo hago pa diverirme pa divertirme */
+  margin: auto; /* Lo hago para el contenido sea flexible */
+  max-width: 1440px; /* El ancho del desfio */
+}
+@media (min-width: 1900px) {
+  body { /* ocupa todo el ancho de mi pantalla*/
+    max-width: 1920px;
+  }
+}
+
+/* Estilos del header */
+.header {
+  width: 88%;
+  padding: 30px;
+}
+@media (min-width: 1200px) {
+  .header { /* Osea que le doy un tamaño y cuando cambie la resolcion le doy otro */
+    width: 100%;
+  }
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 1900px) {
+  .header__nav { /* reposisiono los dos elementos */
+    padding: 10px 180px;
+  }
+}
+.header__nav__logo {
+  width: 100px;
+  height: 18px;
+  /* BETA */
+}
+@media (min-width: 1200px) {
+  .header__nav__logo { /* Redimensiono */
+    width: 241px;
+    height: 41px;
+  }
+}
+.header__nav__btn {
+  color: hsl(322deg, 100%, 66%);
+  background-color: unset;
+  border-radius: 15px;
+  border: 1px solid hsl(322deg, 100%, 66%);
+  width: 90px;
+  height: 25px;
+  box-shadow: 0 10px 20px #bbb;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: unset;
+  /* BETA */
+}
+.header__nav__btn:hover {
+  background-color: hsl(321deg, 100%, 78%);
+}
+.header__nav__btn:hover {
+  background-color: unset;
+  border-color: hsl(321deg, 100%, 78%);
+  color: hsl(321deg, 100%, 78%);
+}
+@media (min-width: 1200px) {
+  .header__nav__btn { /* Redimensiono */
+    width: 141px;
+    height: 41px;
+    border-radius: 60px;
+  }
+}
+
+/*Fin Estilos del header */
+/* Estilos del main */
+.main {
+  width: 100%; /* ocupa todo el ancho */
+  text-align: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Estilos de la descripcion principal */
+  /* Fin estilos descripcion */
+  /* Estilos de stats */
+  /* Fin estilos de stats */
+  /* Estilos de las sesiones */
+  /* Pongo todos los estilos de cada sección, solo copie y pegue, tal vez lo haga con un mixin pero queria verlo como se terminaba */
+  /* sección conversations */
+  /* Fin estilos de las secciones */
+  /* Estilos de la ultima pregunta */
+  /*Fin Estilos de la ultima pregunta */
+}
+.main .description {
+  padding: 0 10px;
+  margin-bottom: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .description__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: hsl(192deg, 100%, 9%);
+  margin-bottom: 20px;
+}
+@media (min-width: 1200px) {
+  .main .description__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 3.8em;
+    color: hsl(192deg, 100%, 9%);
+  }
+}
+.main .description__p {
+  font-weight: 400;
+  color: hsl(192deg, 100%, 9%);
+  margin-bottom: 40px;
+  max-width: 80%; /* No llegue hasta los bordes */
+}
+@media (min-width: 1200px) {
+  .main .description__p {
+    font-size: 1.5em;
+    max-width: 50%;
+  }
+}
+.main .description__btn {
+  max-width: 300px; /* Un rango de tamaño */
+  min-width: 100px;
+  color: hsl(207deg, 100%, 98%);
+  background-color: hsl(322deg, 100%, 66%);
+  border-radius: 15px;
+  border: 1px solid hsl(322deg, 100%, 66%);
+  width: 40%;
+  height: 40px;
+  box-shadow: 0 10px 20px #bbb;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.main .description__btn:hover {
+  background-color: hsl(321deg, 100%, 78%);
+}
+@media (min-width: 1200px) {
+  .main .description__btn {
+    height: 65px;
+    border-radius: 50px;
+    font-size: 1em;
+  }
+}
+.main .description__img {
+  width: 80%;
+}
+.main .stats {
+  width: 100%; /* Todo el ancho */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/bg-section-top-desktop-1.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  /* Lo hago con mixins pero esto podría ser con una clase en común */
+}
+@media (min-width: 1200px) {
+  .main .stats {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.main .stats__formed {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 130px;
+  margin-bottom: 60px;
+  /* @mixin secciones {
+      pass
+  } */
+  /* Porcentaje para el responsive */
+}
+.main .stats__formed__icon {
+  width: 21%; /* porcentaje para el responsive */
+  height: 30px;
+  align-self: left;
+}
+.main .stats__formed__cant {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 350%;
+  color: hsl(192deg, 100%, 9%);
+}
+.main .stats__formed__p {
+  color: #777;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+@media (min-width: 1200px) {
+  .main .stats__formed {
+    /* Agrego mejor la parte responsiva en este mixin */
+    justify-content: center;
+    width: 240px;
+    height: 230px;
+  }
+  .main .stats__formed__icon {
+    width: 55px;
+    height: 40px;
+  }
+  .main .stats__formed__cant {
+    font-size: 500%;
+  }
+  .main .stats__formed__p {
+    align-self: center;
+  }
+}
+.main .stats__messages {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 130px;
+  margin-bottom: 60px;
+  /* @mixin secciones {
+      pass
+  } */
+}
+.main .stats__messages__icon {
+  width: 21%; /* porcentaje para el responsive */
+  height: 30px;
+  align-self: left;
+}
+.main .stats__messages__cant {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 300%;
+  color: hsl(192deg, 100%, 9%);
+}
+.main .stats__messages__p {
+  color: #777;
+  font-weight: 400;
+  font-size: 1em;
+}
+@media (min-width: 1200px) {
+  .main .stats__messages {
+    /* Agrego mejor la parte responsiva en este mixin */
+    justify-content: center;
+    width: 240px;
+    height: 230px;
+  }
+  .main .stats__messages__icon {
+    width: 55px;
+    height: 40px;
+  }
+  .main .stats__messages__cant {
+    font-size: 500%;
+  }
+  .main .stats__messages__p {
+    align-self: center;
+  }
+}
+.main .section { /* Decido ponerle una clase en común a todas las secciones */
+  width: 100%; /* Todo el ancho, para que el fondo llegue a los extremos */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh; /* cada seccion se vea en toda la panalla */
+  /* padding: 5px 0; */ /* Este padding para poner los fondos */
+  background-color: hsl(207deg, 100%, 98%);
+}
+@media (min-width: 1200px) {
+  .main .section {
+    width: 100%;
+    /*  padding: 200px 0; */ /* Este padding para los fondos */
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.main .section__image {
+  align-self: center;
+  width: 80%; /* Dejo cierto margen a los lados, el fondo si llega a los lados*/
+}
+@media (min-width: 1200px) {
+  .main .section__image {
+    width: 50%; /* Ocupe la mitad del espacio */
+    padding: 0 60px;
+  }
+}
+.main .section__description {
+  margin: 80px auto 30px;
+  height: 280px;
+}
+@media (min-width: 1200px) {
+  .main .section__description {
+    width: 50%; /* Ocupa la otra mitad osea el 50% del 80% del main que 100% */
+    text-align: left;
+    padding: 0 50px;
+    font-size: 2em;
+  }
+}
+.main .section__description__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: hsl(192deg, 100%, 9%);
+  margin-bottom: 15px;
+}
+.main .section__description__p {
+  font-size: 1em;
+  margin: 0 10px;
+  line-height: 1.2em;
+  color: hsl(192deg, 100%, 9%);
+}
+.main .conversations {
+  padding-top: 100px;
+  background-color: unset;
+  background-image: url(../images/bg-section-top-desktop-2.svg), url(../images/bg-section-bottom-desktop-1.svg);
+  background-position: bottom, top;
+  background-repeat: no-repeat;
+  background-size: contain; /* El fondo se adapta al contenido */
+}
+@media (min-width: 1200px) {
+  .main .conversations {
+    padding-top: 200px;
+    flex-direction: row;
+  }
+}
+.main .question {
+  width: 100%;
+  background-image: url(../images/bg-section-bottom-desktop-2.svg), url(../images/bg-footer-top-desktop.svg);
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+.main .question__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: hsl(192deg, 100%, 9%);
+  margin-bottom: 30px;
+}
+@media (min-width: 1200px) {
+  .main .question__title {
+    font-weight: 700;
+    font-size: 2em;
+  }
+}
+.main .question__btn {
+  /* Aqui es donde podria ir un mixin bien hecho, incluyendo la parte responsiva ya que copie y pegue literalmente lo del boton de la description */
+  max-width: 300px; /* un rango en el que el boton crezca */
+  min-width: 100px;
+  color: hsl(207deg, 100%, 98%);
+  background-color: hsl(322deg, 100%, 66%);
+  border-radius: 15px;
+  border: 1px solid hsl(322deg, 100%, 66%);
+  width: 40%;
+  height: 40px;
+  box-shadow: 0 10px 20px #bbb;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.main .question__btn:hover {
+  background-color: hsl(321deg, 100%, 78%);
+}
+@media (min-width: 1200px) {
+  .main .question__btn {
+    height: 65px;
+    border-radius: 50px;
+    font-size: 1em;
+  }
+}
+
+/* Fin estilos del main */
+/* Footer */
+.footer {
+  background-color: hsl(192deg, 100%, 9%);
+  color: white;
+  padding: 50px 30px;
+  width: 100%; /* Todo el ancho */
+  /* Sección de la suscribción para consejos */
+  /* Fin sección de suscribición */
+  /* Como contactar */
+  /* Fin de contactar */
+}
+@media (min-width: 1200px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; /* atributtion al final */
+    justify-content: space-around;
+    align-items: baseline;
+  }
+}
+.footer .suscribe {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+}
+@media (min-width: 1200px) {
+  .footer .suscribe {
+    max-width: 600px; /* Limite */
+    flex-direction: row;
+    font-size: 1.1em;
+  }
+}
+.footer .suscribe__description {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .footer .suscribe__description {
+    max-width: 60%;
+  }
+}
+.footer .suscribe__description__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.footer .suscribe__description__p {
+  font-weight: 700;
+  margin: 20px 0;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.footer .suscribe__description__input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1em;
+  color: hsl(192deg, 100%, 9%);
+  font-family: "Courier New", Courier, monospace;
+  transition: outline 0.1s ease;
+  outline: 2px solid hsl(192deg, 100%, 9%);
+}
+.footer .suscribe__description__input:focus {
+  outline: 2px solid hsl(322deg, 100%, 66%);
+}
+.footer .suscribe__description #emailError {
+  color: crimson;
+  margin-top: 10px;
+  font-size: 0.9em;
+  display: none;
+  position: absolute; /* absoluta para que no me chingue el DOM */
+}
+@media (min-width: 1200px) {
+  .footer .suscribe__description #emailError {
+    font-size: 1em;
+  }
+}
+.footer .suscribe__btn-container {
+  margin: 22px 0;
+  align-self: flex-end;
+}
+@media (min-width: 1200px) {
+  .footer .suscribe__btn-container {
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+}
+.footer .suscribe__btn {
+  color: white;
+  background-color: hsl(322deg, 100%, 66%);
+  border-radius: 15px;
+  border: 1px solid hsl(322deg, 100%, 66%);
+  width: 165px;
+  height: 48px;
+  box-shadow: 0 10px 20px #bbb;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1em;
+}
+.footer .suscribe__btn:hover {
+  background-color: hsl(321deg, 100%, 78%);
+}
+@media (max-width: 390px) {
+  .footer .suscribe__btn { /* Cuando tenga menos de 390 px has esto */
+    width: 100px;
+  }
+}
+.footer .contact {
+  width: 100%;
+  margin: 60px 0 20px;
+  /* Iconos de redes sociales */
+}
+@media (min-width: 1200px) {
+  .footer .contact {
+    width: 300px; /* un tamaño estatico */
+    font-size: 1.1em;
+  }
+}
+.footer .contact__description {
+  margin-bottom: 50px;
+  /* Iconos de contacto */
+}
+.footer .contact__description__logo {
+  width: 190px;
+}
+.footer .contact__description__p {
+  font-weight: 700;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+.footer .contact__description .description__container {
+  width: 80%;
+}
+.footer .contact__description .description__container__f {
+  display: flex;
+  margin: 20px 0;
+  gap: 15px; /* Separo el icono del texto */
+}
+.footer .contact__description .description__container__f span {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.footer .contact__redes {
+  display: flex;
+  gap: 10px;
+}
+.footer .contact__redes a {
+  color: white;
+  transition: color 0.3s;
+}
+.footer .contact__redes a:hover {
+  color: #999;
+}
+@media (min-width: 1200px) {
+  .footer .contact__redes {
+    margin-top: 80px;
+  }
+}
+.footer .attribution {
+  margin: 50px 0 0;
+  font-size: 0.8em;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .footer .attribution {
+    width: 100%; /* Ocupa toda la fila que se crea */
+    font-size: 1em;
+  }
+}
+.footer .attribution a {
+  color: slateblue;
+}
+.footer .attribution a:hover {
+  transition: color 0.3s;
+  color: #999;
+}
+
+/*# sourceMappingURL=style.css.map */

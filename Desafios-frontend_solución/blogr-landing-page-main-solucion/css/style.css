@@ -1,0 +1,614 @@
+@charset "UTF-8";
+/* (CTA text) */
+/* (CTA hover background) */
+/* (headings) */
+/* (text) */
+/*  (footer text) */
+/* (body copy) */
+/* (footer background) */
+/* Hover */
+/* - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+- Weights: 300, 600
+
+- Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+- Weights: 400, 500, 700 */
+/*  */
+/* Estilos generales */
+/* Reseteo basico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales  de los botones */
+.btn {
+  border: none;
+  border-radius: 25px;
+  font-size: 1.02em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 100ms linear;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+a {
+  text-decoration: none;
+  color: hsl(207deg, 13%, 34%);
+}
+
+summary {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Este en mobile */
+.icon-arrow {
+  content: url(../images/icon-arrow-dark.svg);
+  transition: 0.3s;
+}
+
+/* Fin estilos generales */
+/* Tamaño y estilos del body */
+body {
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0 auto;
+  font-family: "overpass";
+  text-align: center;
+}
+
+/* Tamaño y estilos del body */
+.header {
+  background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(180deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  padding-bottom: 100px;
+  background-size: 200%;
+  background-position-x: center;
+  background-position-y: center;
+  border-bottom-left-radius: 100px;
+  /* Contiene el logo y el nav hamburguesa */
+  /* Desktop mas de 950px */
+  /* sección del header que contiene el publishing */
+}
+.header__nav-container {
+  padding: 60px 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* logo */
+  /* Icono hamburguesa */
+  /* Estos son los iconos de la hamburguer y la X */
+  /* fin icono hgamburguesa */
+  /* Lo hago aparcer con js */
+  /* Oculto el nav desktop */
+}
+.header__nav-container .header__logo img {
+  width: 80px;
+}
+.header__nav-container .icon-container {
+  /* Ubico lo dos iconos en el mismo lugar */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  /* Le doy estilos y después lo modifico en js */
+}
+.header__nav-container .icon-container .icon {
+  width: 25px;
+  height: 25px;
+  grid-row: 1;
+  grid-column: 1;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.1s;
+}
+.header__nav-container .icon-container .icon--active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.1s;
+}
+.header__nav-container .icon:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+}
+.header__nav-container .icon:active {
+  transform: scale(0.9);
+}
+.header__nav-container .nav-hamburguer__bar {
+  position: absolute;
+  margin-top: 30px;
+  left: 30px;
+  right: 30px;
+  border-radius: 10px;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  display: none;
+  box-shadow: 0 0 30px hsl(207deg, 13%, 34%);
+  /* Rota el icono */
+  /* aparece sensualmente los links */
+  /* <-botones login-> */
+}
+.header__nav-container .nav-hamburguer__bar .nav__details__summary {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "ubuntu";
+  font-size: 1.2em;
+  font-weight: 500;
+  color: hsl(208deg, 49%, 24%);
+}
+.header__nav-container .nav-hamburguer__bar .nav__details {
+  cursor: pointer;
+}
+.header__nav-container .nav-hamburguer__bar .nav__details[open] .icon-arrow {
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+.header__nav-container .nav-hamburguer__bar .nav__details[open] .links-container {
+  transition: 0.3s;
+  transform: scale(1);
+}
+.header__nav-container .nav-hamburguer__bar .links-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: hsla(240deg, 3%, 79%, 0.4);
+  transform: scale(0);
+  /* <-ul que contiene los links-> */
+}
+.header__nav-container .nav-hamburguer__bar .links-container .summary__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 700;
+}
+.header__nav-container .nav-hamburguer__bar .nav__register {
+  margin: auto;
+  width: 80%;
+  border-top: 1px solid hsl(240deg, 2%, 79%);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* Los botones que esten dentro de este contenedor */
+}
+.header__nav-container .nav-hamburguer__bar .nav__register .btn {
+  width: 140px;
+  height: 50px;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.header__nav-container .nav-hamburguer__bar .nav__register .nav__register__login {
+  color: hsl(208deg, 49%, 24%);
+  background-color: unset;
+}
+.header__nav-container .nav-hamburguer__bar .nav__register .nav__register__singUp {
+  background: linear-gradient(90deg, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  color: hsl(0deg, 0%, 100%);
+}
+.header__nav-container .nav-hamburger__bar--active {
+  display: flex;
+  animation: aparecer 0.3s linear alternate;
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) translateX(100%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header__nav-container .nav-bar {
+  display: none;
+}
+@media (min-width: 950px) {
+  .header {
+    /* oculto el nav y los iconos mobile */
+  }
+  .header .icon-container, .header .header__logo {
+    display: none;
+  }
+  .header .nav-hamburguer__bar {
+    display: none;
+  }
+  .header .nav-bar {
+    width: 100%;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header .nav-bar__left {
+    min-width: 400px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: hsl(240deg, 2%, 79%);
+    font-weight: 700;
+    font-size: 1.2em;
+    /* el summary del acordeon */
+    /* Icono */
+    /* card absolute contiene el nav */
+  }
+  .header .nav-bar__left .nav__details {
+    transition: 0.3s;
+    position: relative;
+  }
+  .header .nav-bar__left .nav__details__summary:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .header .nav-bar__left .nav__details__summary:active {
+    color: hsl(0deg, 0%, 100%);
+    text-decoration: underline;
+  }
+  .header .nav-bar__left .nav__details[open] .nav__details__summary {
+    color: hsl(0deg, 0%, 100%);
+    text-decoration: underline;
+    transition: 0.3s;
+  }
+  .header .nav-bar__left .nav__details[open] .icon-arrow-gray {
+    transition: 0.3s;
+    transform: rotate(180deg);
+  }
+  .header .nav-bar__left .icon-arrow-gray {
+    transition: 0.3s;
+    content: url(../images/icon-arrow-light.svg);
+  }
+  .header .nav-bar__left .nav__details[open] .links-container {
+    transition: 0.3s;
+    transform: translateY(0) scale(1);
+  }
+  .header .nav-bar__left .links-container {
+    transition: 0.3s;
+    transform: translateY(-100%) scale(0);
+    border-radius: 3px;
+    position: absolute;
+    box-shadow: 0 0 15px hsl(237deg, 17%, 21%);
+    min-width: 100px;
+    padding: 10px;
+    top: 35px;
+    left: -10px;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+  .header .nav-bar__left .links-container .summary__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: hsl(208deg, 49%, 24%);
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+  .header .nav-bar__left .links-container .summary__links .link a:hover {
+    font-weight: bold;
+  }
+  .header .nav-bar .nav__register {
+    display: flex;
+    gap: 10px;
+    font-size: 1.1em;
+  }
+  .header .nav-bar .nav__register .btn {
+    width: 140px;
+  }
+  .header .nav-bar .nav__register .btn:active {
+    transform: scale(0.9);
+  }
+  .header .nav-bar .nav__register .nav__register__login {
+    background-color: unset;
+    color: hsl(0deg, 0%, 100%);
+  }
+  .header .nav-bar .nav__register .nav__register__login:hover {
+    background-color: hsl(0deg, 0%, 100%);
+    color: hsl(13deg, 100%, 72%);
+  }
+  .header .nav-bar .nav__register .nav__register__singUp {
+    color: hsl(353deg, 100%, 62%);
+  }
+  .header .nav-bar .nav__register .nav__register__singUp:hover {
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsla(240deg, 3%, 79%, 0.4);
+  }
+}
+.header__publishing {
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: hsl(0deg, 0%, 100%);
+}
+.header__publishing__title {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+@media (min-width: 950px) {
+  .header__publishing__title {
+    font-size: 3.5em;
+  }
+}
+.header__publishing__p {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.header__publishing__btns {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__publishing__btns .publishing__start {
+  width: 140px;
+  height: 50px;
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(353deg, 100%, 62%);
+}
+.header__publishing__btns .publishing__start:hover {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsla(240deg, 3%, 79%, 0.4);
+}
+.header__publishing__btns .publishing__learn {
+  width: 140px;
+  height: 50px;
+  background-color: unset;
+  border: 1px solid hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 100%);
+}
+.header__publishing__btns .publishing__learn:hover {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(353deg, 100%, 62%);
+}
+
+/* <-------------------------------------------fin de estilos de header-> */
+/* estilos generales */
+.section {
+  overflow: hidden;
+  width: 90%;
+  margin: 80px auto;
+}
+
+.section__title {
+  color: hsl(208deg, 49%, 24%);
+  font-size: 1.8em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.section__p {
+  color: hsl(207deg, 13%, 34%);
+  width: 90%;
+  font-size: 1.1em;
+  letter-spacing: 0.1px;
+  line-height: 25px;
+  font-weight: 300;
+  margin: 20px auto;
+}
+
+/* fin estilos generales */
+/* <-------------------------------------------estilos del main container--> */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0 0px;
+}
+.main-container img {
+  width: 100%;
+  max-width: 500px;
+}
+@media (min-width: 950px) {
+  .main-container .section-editor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: baseline;
+    text-align: left;
+  }
+  .main-container .section-editor .section__title {
+    text-align: left;
+    width: 100%;
+  }
+  .main-container .section-editor .editor__title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: -100px;
+  }
+  .main-container .section-editor .section-editor__img {
+    display: block;
+    content: url(../images/illustration-editor-desktop.svg);
+    width: 100%;
+    max-width: 1100px;
+    margin-right: -60%;
+    order: 100;
+  }
+  .main-container .section-editor .section-editor__description {
+    font-size: 1.3em;
+    width: 50%;
+    order: 50;
+  }
+  .main-container .section-editor .section-editor__description .section__p {
+    margin: 0;
+  }
+}
+.main-container .section-infrastructure {
+  width: 100%;
+  position: relative;
+  /* Lo ubico para poder darle el bakcground */
+}
+.main-container .section-infrastructure .section-infrastructure__img {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  width: 350px;
+  top: 0;
+  margin: auto;
+  content: url(../images/illustration-phones.svg);
+}
+.main-container .section-infrastructure .container-details {
+  width: 100%;
+  z-index: 1;
+  margin-top: 155px;
+  padding-top: 180px;
+  padding-bottom: 80px;
+  background-image: url(../images/bg-pattern-circles.svg), linear-gradient(180deg, hsl(237deg, 17%, 21%), hsl(237deg, 23%, 32%));
+  background-origin: border-box;
+  background-clip: padding-box;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.main-container .section-infrastructure .container-details .section-infrastructure__title {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 2.5em;
+}
+.main-container .section-infrastructure .container-details .section__p {
+  color: hsl(0deg, 0%, 100%);
+}
+.main-container .section-infrastructure .container-details .section-infrastructure__img-desktop {
+  display: none;
+}
+@media (min-width: 950px) {
+  .main-container .section-infrastructure {
+    /* .section-infrastructure__img-desktop{
+        c
+    } */
+  }
+  .main-container .section-infrastructure .section-infrastructure__img {
+    display: none;
+  }
+  .main-container .section-infrastructure .container-details {
+    font-size: 1.3em;
+    text-align: start;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-height: 300px;
+    max-height: 500px;
+    background-size: contain;
+    background-position-x: left;
+  }
+  .main-container .section-infrastructure .container-details .section-infrastructure__img-desktop {
+    display: block;
+    margin-left: 20px;
+    width: 50%;
+  }
+  .main-container .section-infrastructure .container-details .section-infrastructure__img-desktop img {
+    display: block;
+    margin: auto;
+    transform: scale(1.2);
+  }
+  .main-container .section-infrastructure div {
+    margin-left: 10px;
+    width: 40%;
+  }
+  .main-container .section-infrastructure div h2 {
+    text-align: start;
+  }
+  .main-container .section-infrastructure div p {
+    margin: 0;
+  }
+}
+@media (min-width: 950px) {
+  .main-container .section-laptop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    text-align: start;
+  }
+  .main-container .section-laptop .section__title {
+    text-align: start;
+  }
+  .main-container .section-laptop .section__p {
+    margin: 0;
+  }
+  .main-container .section-laptop .section-laptop__img img {
+    content: url(../images/illustration-laptop-desktop.svg);
+    width: 150%;
+    max-width: 1200px;
+    margin-left: -60%;
+  }
+  .main-container .section-laptop .section-laptop__description {
+    width: 50%;
+  }
+}
+
+/* <-------------------------------------------Fin estilos del main container--> */
+/* <-------------------estilos del footer----- */
+.footer {
+  padding: 80px 0;
+  background-color: hsl(240deg, 10%, 16%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.footer .footer__logo {
+  display: block;
+  margin-bottom: 60px;
+}
+.footer .caption-links {
+  margin: 30px 0;
+}
+.footer .links {
+  color: hsl(0deg, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer .links a {
+  color: hsl(207deg, 13%, 34%);
+}
+.footer .links a:hover {
+  color: hsl(237deg, 23%, 32%);
+}
+.footer .attribution {
+  margin-top: 30px;
+  font-size: 0.7em;
+}
+.footer .attribution a:hover {
+  color: hsl(237deg, 23%, 32%);
+}
+@media (min-width: 950px) {
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    font-size: 1.3em;
+  }
+  .footer .attribution {
+    margin-top: 100px;
+    width: 100%;
+    font-size: 0.9em;
+  }
+}
+
+/* <-------------------Fin estilos del footer----- */
+
+/*# sourceMappingURL=style.css.map */

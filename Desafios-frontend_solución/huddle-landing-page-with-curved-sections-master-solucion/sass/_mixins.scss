@@ -1,0 +1,87 @@
+@use "var";
+
+/* Mixins */
+/* titulos */
+@mixin title($size){
+
+    font-family: var.$headings;
+    font-weight: 700;
+    font-size: $size;
+    color: var.$VeryDarkCyan;
+}
+
+/* Botones */
+@mixin btn ($width, $height, $background:unset,$color){
+    color: $color;
+    background-color: $background;
+    border-radius: 15px;
+    border: 1px solid var.$Pink;
+    width: $width;
+    height: $height;
+    box-shadow: 0 10px 20px var.$shadow;
+    cursor: pointer;
+    transition: all .2s ;
+    &:hover{
+
+        background-color: var.$LightPink;
+        // border-color: var.$LightPink;
+    }
+}
+
+
+/* estadisticas */
+
+@mixin stats($size-title,$size-p){
+
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 130px;
+    margin-bottom: 60px;
+
+    &__icon{
+        width: 21%; /* porcentaje para el responsive */
+        height: 30px;
+        align-self: left;
+    }
+
+    &__cant{
+        @include title($size-title);
+        
+    }
+    &__p{
+        color: var.$letter;
+        font-weight: 400;
+        font-size: $size-p;
+
+    }
+    @media (min-width:1200px){  /* Agrego mejor la parte responsiva en este mixin */
+        justify-content: center;
+        width: 240px;
+        height: 230px;
+        
+        // align-items: center;
+        &__icon{
+            width: 55px;
+            height: 40px;
+            
+        }
+        &__cant{
+            font-size: 500%
+
+        }
+        &__p{
+
+            
+            align-self: center;
+
+        }
+
+        
+    }
+
+    /* @mixin secciones {
+        pass
+    } */
+
+}

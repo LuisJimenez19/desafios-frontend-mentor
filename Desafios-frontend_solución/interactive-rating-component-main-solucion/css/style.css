@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+/* Resteo basico */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Agrego el fonodo y la fuente con su color */
+body {
+  background-color: hsl(216deg, 12%, 8%);
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+}
+
+/* --------------------------card--------------- */
+/* Le un min y un max para no usar el breakpoint */
+.card {
+  display: flex;
+  width: 50%;
+  min-width: 300px;
+  max-width: 415px;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 60px auto; /* Gradient bien facherito */
+  background: linear-gradient(180deg, hsl(214deg, 26%, 16%) 20%, hsl(212deg, 26%, 11%) 80%);
+  /*-----------------------description---------------  */
+  /* ---------------------------valoration section----------------- */
+}
+.card .assessment__description {
+  width: 90%;
+  margin: 20px auto;
+}
+.card .assessment__description__star {
+  content: url(../images/icon-star.svg);
+  background-color: hsla(210deg, 14%, 20%, 0.692);
+  border-radius: 50%;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+.card .assessment__description__title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+.card .assessment__description__p {
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 20px;
+  color: hsl(217deg, 12%, 63%);
+}
+@media (min-width: 800px) {
+  .card .assessment__description__star {
+    padding: 18px;
+  }
+  .card .assessment__description__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .card .assessment__description__p {
+    font-size: 1em;
+  }
+}
+.card .score {
+  width: 90%;
+  margin: 10px auto 20px;
+  /*---------------------button------------------  */
+}
+.card .score__mark-container {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card .score__mark-container .score__mark {
+  width: 40px;
+  height: 40px;
+  background-color: hsla(210deg, 14%, 20%, 0.692);
+  border-radius: 50%;
+  text-align: center;
+  color: hsl(217deg, 12%, 63%);
+  font-size: 0.9em;
+  padding: 12px;
+  margin-bottom: 20px;
+  transition: all 200ms linear;
+}
+@media (min-width: 800px) {
+  .card .score__mark-container .score__mark {
+    width: 50px;
+    height: 50px;
+    font-size: 1em;
+    padding: 16px;
+  }
+}
+.card .score__mark-container .score__mark:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(217deg, 12%, 63%);
+}
+.card .score__mark-container .score__mark--active {
+  background-color: hsl(25deg, 97%, 53%);
+  color: hsl(0deg, 0%, 100%);
+  transform: scale(1.1);
+}
+.card .score__btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 25px;
+  background-color: hsl(25deg, 97%, 53%);
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  transition: all 100ms linear;
+}
+.card .score__btn:hover {
+  cursor: pointer;
+}
+.card .score__btn:active {
+  color: hsl(25deg, 97%, 53%);
+  background-color: hsl(0deg, 0%, 100%);
+  transform: scale(0.98);
+}
+@media (min-width: 800px) {
+  .card { /* Le agrego este mediaquier para que crezca toda la tarjeta */
+    margin: 200px auto;
+    transform: scale(1.1);
+  }
+}
+.card .gratitude {
+  width: 85%;
+  margin: 20px auto;
+  text-align: center;
+  transition: all 200ms linear;
+}
+.card .gratitude img {
+  margin: 20px auto;
+}
+.card .gratitude__img__selected {
+  color: hsl(25deg, 97%, 53%);
+  font-size: 0.95em;
+  background-color: hsla(210deg, 14%, 20%, 0.692);
+  margin: auto;
+  margin-bottom: 18px;
+  width: fit-content;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+.card .gratitude .gratitude__message__p {
+  margin: 18px auto;
+  color: hsl(217deg, 12%, 63%);
+  font-weight: 400;
+  font-size: 0.95em;
+}
+
+/* ---------------------footer------------------------ */
+.attribution {
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  font-size: 0.8em;
+}
+.attribution a {
+  text-decoration: none;
+  color: hsl(210deg, 27%, 26%);
+  transition: all 200ms linear;
+}
+.attribution a:hover {
+  color: hsl(25deg, 97%, 53%);
+}
+
+.btn {
+  display: block;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  background-color: hsl(25deg, 97%, 53%);
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 100ms linear;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:active {
+  color: hsl(25deg, 97%, 53%);
+  background-color: hsl(0deg, 0%, 100%);
+  transform: scale(0.98);
+}
+
+.d-none {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

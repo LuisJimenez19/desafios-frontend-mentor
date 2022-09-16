@@ -1,0 +1,265 @@
+@use 'var';
+
+
+/* Resteo basico */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Agrego el fonodo y la fuente con su color */
+body{
+    background-color: var.$VeryDarkBlue;
+    color: var.$White;
+    font-family: var.$font;
+    
+}
+
+/* --------------------------card--------------- */
+/* Le un min y un max para no usar el breakpoint */
+.card{
+    display: flex;
+    width: 50%;
+    min-width: 300px;
+    max-width: 415px;
+    border-radius: 15px;
+    padding: 5px;
+
+    margin: 60px auto;                         /* Gradient bien facherito */
+    background: linear-gradient(180deg, var.$DarkBlue 20%, var.$DarkBlueGradient 80%);
+    // background-color: var.$DarkBlue;
+
+    /*-----------------------description---------------  */
+    .assessment__description{
+        // border:1px solid red;
+        width: 90%;
+        margin: 20px auto;
+
+        &__star{
+            content: url(../images/icon-star.svg);
+            // background-color: var.$MediumGrey;
+            background-color: var.$circleColor;
+            border-radius: 50%;
+
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        &__title{
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        &__p{
+            font-size: .9em;
+            font-weight: 400;
+            line-height: 20px;
+            color: var.$LightGrey;
+        }
+
+        @media (min-width:800px) {
+            &__star{
+            padding: 18px;            
+            }
+            &__title{
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            &__p{
+                font-size: 1em;
+            }
+            
+        }
+    }
+
+    /* ---------------------------valoration section----------------- */
+
+    .score{
+        width: 90%;
+        margin: 10px auto 20px;
+        
+        
+        
+        &__mark-container{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            .score__mark{
+                width: 40px;
+                height: 40px;
+                background-color: var.$circleColor;
+                border-radius: 50%;
+                text-align: center;
+                color: var.$LightGrey;
+                font-size: .9em;
+                
+                padding: 12px;
+                margin-bottom: 20px;
+
+                transition: all 200ms linear;
+
+                @media (min-width:800px) {
+                    width: 50px;
+                    height: 50px;
+
+                    font-size: 1em;
+                    padding: 16px;
+                }
+
+        
+            }
+            
+            .score__mark:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+                color: var.$White;
+                background-color: var.$LightGrey;
+            }
+            
+            .score__mark--active{
+                background-color: var.$Orange;
+                color: var.$White;
+                transform: scale(1.1);
+            }
+
+        }
+
+        /*---------------------button------------------  */
+
+        &__btn{
+
+            width: 100%;            
+            height: 45px;
+
+            border: none;
+            border-radius: 25px;
+            background-color: var.$Orange;
+            color: var.$White;
+            text-transform:uppercase;
+            font-weight: 700;
+            font-size: .9em;
+            letter-spacing: 2px;
+            
+            
+            transition: all 100ms linear;
+
+
+        }
+
+        &__btn:hover{
+            cursor: pointer;
+        }
+        &__btn:active{
+            color: var.$Orange;
+            background-color: var.$White;
+            transform: scale(0.98);
+        }
+
+    }
+
+    @media (min-width:800px) {  /* Le agrego este mediaquier para que crezca toda la tarjeta */
+        
+        margin: 200px auto;
+        transform: scale(1.1);
+       
+    }
+
+    
+    .gratitude{
+        width: 85%;
+        margin: 20px auto;
+        text-align: center;
+
+        transition: all 200ms linear;
+        img{
+            margin: 20px auto;
+        }
+
+        &__img__selected{
+            color: var.$Orange;
+            font-size: .95em;
+            background-color: var.$circleColor;
+            
+            margin: auto;
+            margin-bottom: 18px;
+            width: fit-content;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .gratitude__message__p{
+            margin: 18px auto;
+            color: var.$LightGrey;
+            font-weight: 400;
+            font-size: .95em;
+        }
+
+     
+    }
+
+   
+   
+}
+
+/* ---------------------footer------------------------ */
+
+.attribution{
+    width: 100%;
+    
+    text-align: center;
+    align-self: center;
+    font-size: .8em;
+     
+    
+    a{
+        text-decoration: none;
+        color: var.$MediumGrey;
+
+        transition: all 200ms linear;
+        &:hover{
+            color: var.$Orange;
+        }
+    }
+}
+.btn{
+    display: block;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+
+    background-color: var.$Orange;
+    color: var.$White;
+    
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+
+    
+    transition: all 100ms linear;
+
+
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+.btn:active{
+    color: var.$Orange;
+    background-color: var.$White;
+    transform: scale(0.98);
+}
+
+.d-none{
+    display: none;
+}

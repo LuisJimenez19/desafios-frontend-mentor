@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    /* primary */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+
+    /* neutral */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+
+}
+
+/* -----------------mobile first 375px--------------------------- */
+        /* estilos generales y centro el contenido  */
+body{
+
+    background-image: url(../images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+    
+    
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+/* le doy dimensiones a la tarjeta, le doy la resoullicón de 375px para movil y centro */
+.main{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* width: 375px; */
+    width: 90%;  /* Con este porcentaje no se le quita lo flexible */
+    height: 90%;
+    margin: auto;
+    padding: 15px;
+    align-items: center;
+}
+
+
+
+/* Primera sección, contenedor de ka descripción */
+.main__first-section{
+
+    padding: 40px 0px;
+    /* height: 300px; */
+    
+
+}
+
+.main__first-section__title{
+
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.main__first-section__p{
+    
+    color: var(--Dark-Grayish-Magenta);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+/* segunda sección, contiene la valiración de los usuarios */
+.main__second-section{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+   
+}
+/* le doy icono a las etiquetas span, un tamaño y un margen */
+.main__second-section__assesment__stars span {
+
+    
+    content: url(../images/icon-star.svg);
+    width: 15px;
+    margin: 15px 5px ;
+    
+
+}
+/* este contenedor es padre del anterior, contiene el comentario y la valoración */
+.main__second-section__assesment{
+
+    background-color: var(--Light-Grayish-Magenta);
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+    font-size: 20px;
+    height: 80px;
+    margin: 20px 0;
+    border-radius: 10px;
+
+}
+
+
+/* Contiene las opiniones de los usuarios,  */
+
+.main__third__section{
+
+    background-image: url(../images/bg-pattern-bottom-mobile.svg);
+    display: flex;
+    flex-direction: column
+}
+
+
+/* cada tarjeta de los usuarios */
+.main__third__section__users{
+
+    display: flex;
+    flex-direction: column;     /* la imagen y el nombre estan en un contenedor diferente al comentario */
+    background-color: var(--Very-Dark-Magenta);
+    padding: 25px ;
+    margin: 20px 0;
+    border-radius: 10px;
+    color: var(--White);
+    font-weight: 400;
+    font-size: 20px;
+    text-align: start;
+}
+
+/* contiene la imagen y el nombre */
+.main__third__section__users-profile{
+
+    display: flex; /* pone la imagen  a un lado y el nombre al otro */
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.main__third__section__users-profile img{
+
+    border-radius: 50%;
+    width: 50px;
+    height: 100%;
+    margin-right: 20px;
+
+}
+
+.main__third__section__users-profile-name{
+
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name{
+
+    font-weight: 700;
+    margin: 0px 0 10px 0;
+
+}
+
+.verification{
+
+    color: var(--Soft-Pink);
+
+}
+
+a {
+
+    text-decoration: none;
+    color: var(--Dark-Grayish-Magenta);
+
+}
+
+
+@media screen and (min-width:600px){
+
+
+            /* le doy las dimensiones para escritorio */
+    body{
+            /* 21/07 le quito las dimensiones para que se adapte al contenido */
+        /* flex-basis: 1440px; */
+       /*  width: 80%; */   /* con el procentaje no se le quita lo flexibe pero en este caso lo dejo mejor statico */
+        /* height: 800px; */
+        /* width: 100%; */
+        /* NO ES NECESARIO */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*Dimensiones del contenedor principal */
+    .main{
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        
+
+        /* width: 1200px;
+        height: 700px; */
+         width: 70%;          /* Lo dejo con porcentaje para que sea flexible */
+        margin: 50px auto;
+
+    }
+
+    .main__first-section{
+
+        
+        width: 400px;
+        /* height: 200px; */
+        /* padding: 30px; */
+        text-align: start;
+        
+        
+    }
+
+    .main__first-section__title{
+
+        font-size:60px;
+        
+
+    }
+
+
+
+
+    .main__second-section{
+
+        width: 600px;
+        /* width: 50%; */
+        /* margin-left: 100px; */
+        height: 200px;
+        /* box-sizing: border-box; */
+        margin-bottom: 100px;
+        flex-grow: 2;  /* que el espacio que sobre lo agarre esta caja */
+    }
+
+    .main__second-section__assesment{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 60px;
+        box-sizing: border-box;
+        
+        /* padding: 30px; */
+    
+    }
+    .main__second-section__assesment:nth-child(2){ /* ubico cada caja */
+        transform: translateX(50px);
+    }
+    .main__second-section__assesment:nth-child(3){
+        transform: translateX(100px);
+       
+    }
+
+
+
+    .main__second-section__assesment__stars{
+    /* margin: auto; */
+        margin-right: 20px;   /* Separo las estrellas del texto */
+        
+        box-sizing: content-box;
+        
+        
+        
+    }
+
+    
+
+
+
+            /* Las tarjetas en horizontal  */
+    .main__third-section{
+
+        width: 100%;    /* Ocupe toda la fila de abajo  */
+        display: flex;
+        flex-wrap: wrap;  /* tarjeta se va para abajo cundo no entre */
+        justify-content: space-around;
+        background-image: url(../images/bg-pattern-bottom-desktop.svg);
+
+    }
+        
+    .main__third__section__users{
+        
+        max-width: 300px;   /* le doy dimensiones a cada una de las tarjetas */
+        height: 230px;
+        
+
+    }
+        /* las ubico */
+    .main__third__section__users:nth-child(2){
+        
+        transform: translateY(30px);
+
+    }
+
+    .main__third__section__users:nth-child(3){
+
+        transform: translateY(60px);
+
+
+    }
+
+
+
+}

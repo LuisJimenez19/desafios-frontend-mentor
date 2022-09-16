@@ -1,0 +1,749 @@
+@use 'var';
+/*  */
+
+/* Estilos generales */
+
+/* Reseteo basico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Estilos generales  de los botones */
+.btn{
+    border: none;
+   
+    border-radius: 25px;
+    font-size: 1.02em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 100ms linear;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.btn:active{
+    transform: scale(.9);
+}
+
+
+a{
+    text-decoration: none;
+    color: var.$VeryDarkGrayishBlue;
+}
+
+summary{
+    list-style: none;
+}
+
+li{
+    list-style: none;
+}
+
+/* Este en mobile */
+.icon-arrow{
+    content: url(../images/icon-arrow-dark.svg);
+    transition: .3s;
+    
+}
+
+/* Fin estilos generales */
+
+/* Tamaño y estilos del body */
+body{
+    width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+    margin: 0 auto;
+    font-family: 'overpass';
+    text-align: center;
+    
+}
+/* Tamaño y estilos del body */
+
+
+.header{
+    
+    background-image: url(../images/bg-pattern-intro-desktop.svg),linear-gradient(180deg, var.$VeryLightRed,var.$LightRed) ;
+    padding-bottom: 100px;
+
+    background-size: 200%;
+    background-position-x: center;
+    background-position-y: center;
+
+    border-bottom-left-radius: 100px;
+
+    
+    /* Contiene el logo y el nav hamburguesa */
+    &__nav-container{
+
+        // border: 2px solid #fff;
+        padding: 60px 20px 30px;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        /* logo */
+        .header__logo img{
+            width: 80px;
+        }
+
+        /* Icono hamburguesa */
+        .icon-container{
+
+            /* Ubico lo dos iconos en el mismo lugar */
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            
+            .icon{
+                width: 25px;
+                height: 25px;
+                grid-row: 1;
+                grid-column: 1;
+                transform: scale(0);
+                opacity: 0;
+                transition: .1s;
+            }
+
+            /* Le doy estilos y después lo modifico en js */
+            .icon--active{
+                opacity: 1;
+                transform: scale(1);
+                transition: .1s;
+            }
+
+        }
+
+        /* Estos son los iconos de la hamburguer y la X */
+        .icon:hover{
+            cursor: pointer;
+            transform: scale(1.08);
+        }
+        .icon:active{
+            transform: scale(.9);
+        }
+        /* fin icono hgamburguesa */
+
+
+        
+// <----------------------/* La barra de navegación de mobile */----------------------------------------->
+        .nav-hamburguer__bar{
+            position: absolute;
+
+            margin-top: 30px;
+            left: 30px;
+            right: 30px;
+
+            
+            // border: 1px solid magenta;
+            border-radius: 10px;
+            background-color: var.$White;
+            padding: 40px 0;
+            
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 20px;
+            display: none;
+
+            box-shadow: 0 0 30px var.$VeryDarkGrayishBlue;
+            
+            // <-------titulo del acordeon---------->
+            .nav__details__summary{
+                
+                width: 40%;
+                margin: auto;
+                // border: 1px solid #000;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                font-family: 'ubuntu';
+                font-size: 1.2em;
+                font-weight: 500;
+                color: var.$VeryDarkBlue;
+
+            }
+
+            .nav__details{
+                // border: 1px solid #444;
+                cursor: pointer;
+            }
+        
+            /* Rota el icono */
+            .nav__details[open] .icon-arrow{
+                transition: .3s;
+                transform: rotate(180deg);
+            }
+
+            /* aparece sensualmente los links */
+            .nav__details[open] .links-container{
+                transition: .3s;
+                transform: scale(1);
+                
+            }
+
+            // <-------------contenedor del ul -------------->
+            .links-container{
+                width: 80%;
+                margin: 20px auto;
+                padding: 20px 0;
+                border-radius: 10px;
+                background-color: var.$GrayishBlueHover;
+
+                // transition: .3s;
+                transform: scale(0);
+
+                /* <-ul que contiene los links-> */
+                .summary__links{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    font-weight: 700;
+                    
+                    
+                    
+                }
+            }
+
+            /* <-botones login-> */
+            .nav__register{
+                margin: auto;
+                width: 80%;
+                border-top: 1px solid var.$GrayishBlue;
+                padding-top: 20px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                /* Los botones que esten dentro de este contenedor */
+                .btn{
+                    width: 140px;
+                    height: 50px;  
+                    font-size: 1.1em;
+                    font-weight: 700;
+                }
+                .nav__register__login{
+                    color: var.$VeryDarkBlue ;
+                    background-color: unset;
+                    
+                }
+                .nav__register__singUp{
+                    background: linear-gradient(90deg, var.$VeryLightRed, var.$LightRed);
+                    color: var.$White;
+                }
+               
+            }
+            
+        }
+
+
+        /* Lo hago aparcer con js */
+        .nav-hamburger__bar--active{
+            display: flex;
+            animation: aparecer .3s linear alternate ;
+        }
+        @keyframes aparecer {
+            0%{
+                opacity: 0;
+                transform: translateY(-100%) translateX(100%) scale(0);
+            }
+            100%{
+                opacity: 1;
+                transform:  translateY(0);
+            }
+        }
+
+    /* Oculto el nav desktop */
+    .nav-bar{
+        display: none;
+    }
+
+    }
+    /* Desktop mas de 950px */
+    @media (min-width:950px) {
+        /* oculto el nav y los iconos mobile */
+        .icon-container,.header__logo{
+            display: none;
+        }
+        .nav-hamburguer__bar{
+            display: none;
+        }
+//  <-------------nav-var desktop--------------------->
+        .nav-bar{
+
+            width: 100%;
+            padding: 0 80px;
+            display: flex;
+            justify-content: space-between;
+
+            &__left{
+
+                min-width: 400px;
+                width: 50%;
+
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                color: var.$GrayishBlue;
+                font-weight: 700;
+                font-size: 1.2em;
+                
+
+                /* el summary del acordeon */
+                .nav__details{
+                    transition: .3s;
+                    position: relative;
+                   
+                }
+
+                .nav__details__summary:hover{
+                    transform: scale(1.05);
+                    cursor: pointer;
+                }
+                .nav__details__summary:active{
+                    color: var.$White;
+                    text-decoration: underline;
+
+                }
+                .nav__details[open] .nav__details__summary{
+                    color: var.$White;
+                    text-decoration: underline;
+                    transition: .3s;
+                }
+
+                
+                /* Icono */
+                .nav__details[open] .icon-arrow-gray{
+                    transition: .3s;
+                    transform: rotate(180deg);
+                }
+                .icon-arrow-gray{
+                    transition: .3s;
+                    content: url(../images/icon-arrow-light.svg);
+                }
+                
+                .nav__details[open] .links-container{
+                    transition: .3s;
+                    transform: translateY(0) scale(1);
+                }
+
+                /* card absolute contiene el nav */
+                .links-container{
+                    transition: .3s;
+                    transform: translateY(-100%) scale(0);
+                    
+                    border-radius: 3px;
+                    position: absolute;
+                    box-shadow: 0 0 15px var.$VeryDarkGrayBlue;
+                    min-width: 100px;
+                    padding: 10px;
+
+                    top: 35px;
+                    left: -10px;
+
+                    background-color: var.$White;
+
+                    .summary__links{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+
+                        color: var.$VeryDarkBlue;
+                        font-size: .8em;
+                        font-weight: 400;
+                        .link a:hover{
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+            }
+            .nav__register{
+                display: flex;
+                gap: 10px;
+                font-size: 1.1em;
+                .btn{
+                    width: 140px;
+                }
+                .btn:active{
+                    transform: scale(.9);
+                }
+                .nav__register__login{
+                    background-color: unset;
+                    color: var.$White;
+                }
+                .nav__register__login:hover{
+                    background-color: var.$White;
+                    color: var.$VeryLightRed;
+                    
+                }
+                .nav__register__singUp{
+                    color: var.$LightRed;
+                }
+                .nav__register__singUp:hover{
+                    color: var.$White;
+                    background-color: var.$GrayishBlueHover;
+                    
+                }
+                
+            }
+        }
+// <--------------fin nav-var desktop----------------->
+        
+    }
+
+
+    /* sección del header que contiene el publishing */
+    &__publishing{
+
+        width: 95%;
+        margin: 40px auto ;
+        text-align: center;
+
+        padding: 20px;    
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        color: var.$White;
+        // border: 1px solid #fff;
+
+        &__title{
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            @media (min-width:950px) {
+                font-size: 3.5em;
+            }
+        }
+
+        &__p{
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        &__btns{
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            justify-content: space-between;
+
+            .publishing__start{
+                width: 140px;
+                height: 50px;
+
+                background-color: var.$White;
+                color: var.$LightRed;
+            }
+            .publishing__start:hover{
+                color: var.$White;
+                background-color: var.$GrayishBlueHover;
+                
+
+            }
+
+            .publishing__learn{
+                width: 140px;
+                height: 50px;
+                
+                background-color: unset;
+                border: 1px solid var.$White;
+                color: var.$White;
+
+            }
+
+            .publishing__learn:hover{
+                background-color: var.$White;
+                color: var.$LightRed;
+            }
+        }
+       
+    }
+}
+
+/* <-------------------------------------------fin de estilos de header-> */
+
+
+/* estilos generales */
+.section{
+    overflow:hidden ;
+    width: 90%;
+    margin: 80px auto;
+}
+.section__title{
+    color: var.$VeryDarkBlue;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px 0;
+}
+.section__p{
+    color:var.$VeryDarkGrayishBlue;
+    width: 90%;
+    font-size: 1.1em;
+    letter-spacing: .1px;
+    line-height: 25px;
+    font-weight: 300;
+    margin: 20px auto;
+}
+
+
+/* fin estilos generales */
+
+/* <-------------------------------------------estilos del main container--> */
+.main-container{
+    img{
+        width: 100%;
+        max-width:500px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 150px 0 0px;
+
+    .section-editor{
+        @media (min-width:950px) {
+            
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: baseline;
+            text-align: left;
+            
+            .section__title{
+                text-align: left;
+                width: 100%;
+            }
+            .editor__title{
+                
+                text-align: center;
+                font-size: 3em;
+                margin-bottom: -100px;
+                
+            }
+            .section-editor__img {
+                
+                display: block;
+                content: url(../images/illustration-editor-desktop.svg);
+                
+                width: 100%;
+                max-width: 1100px;
+                
+                margin-right: -60%;
+                order: 100;
+                
+            }
+            .section-editor__description{
+                font-size: 1.3em;
+                width: 50%;
+                order: 50;
+                .section__p{
+                    margin: 0;
+                }
+            }
+        }
+     
+    }
+
+    .section-infrastructure{
+        
+        width: 100%;
+        position: relative;
+        
+
+        /* Lo ubico para poder darle el bakcground */
+        .section-infrastructure__img{
+            position: absolute;
+            z-index: 100;
+            display: block;
+            width: 350px;
+            top: 0;
+            margin: auto;
+            
+            content: url(../images/illustration-phones.svg);
+        }
+        
+        
+        
+        .container-details{
+            width: 100%;
+            z-index: 1;
+            margin-top: 155px;
+            padding-top: 180px;
+            padding-bottom: 80px;
+
+            background-image: url(../images/bg-pattern-circles.svg), linear-gradient(180deg, var.$VeryDarkGrayBlue, var.$VeryDarkDesaturatedBlue);
+            background-origin:border-box;
+            background-clip: padding-box;
+            background-size: 100%;
+            
+           
+            background-repeat: no-repeat;
+            
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            
+            .section-infrastructure__title{
+                color: var.$White;
+                font-size: 2.5em
+            }
+            .section__p{
+                color: var.$White;
+            }
+            .section-infrastructure__img-desktop{
+                display: none;
+            }
+            
+        }
+        @media (min-width:950px) {
+            .section-infrastructure__img{
+                
+                display: none;
+            }
+            /* .section-infrastructure__img-desktop{
+                c
+            } */
+            .container-details{
+                font-size: 1.3em;
+                text-align: start;
+                padding: 0;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                min-height: 300px;
+                max-height: 500px;
+
+                background-size: contain;
+                background-position-x: left;
+                
+                
+                .section-infrastructure__img-desktop{
+                    display: block;
+                    margin-left:20px ;
+                    width: 50%;
+                    
+                    img{
+                        display: block;
+                        margin: auto;
+                        
+                        transform: scale(1.2);
+                        
+
+                    }
+                }
+            }
+            div{
+                
+                h2{
+                    text-align: start;
+                }
+                p{
+                    margin: 0;
+                }
+                margin-left: 10px;
+                width: 40%;
+                
+            }
+            
+            
+        }
+    }
+    .section-laptop{
+        @media (min-width:950px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3em;
+            text-align: start;
+            .section__title{
+                text-align: start;
+            }
+            .section__p{
+                margin: 0;
+            }
+            .section-laptop__img img{
+                content: url(../images/illustration-laptop-desktop.svg);
+                
+                
+                width: 150%;
+                max-width: 1200px;
+                
+                margin-left: -60%;
+            }
+            .section-laptop__description{
+                width: 50%;
+
+            }
+        }
+    }
+    
+}
+/* <-------------------------------------------Fin estilos del main container--> */
+
+
+
+/* <-------------------estilos del footer----- */
+.footer{
+    padding: 80px 0;
+    background-color: var.$VeryDarkBlackBlue;
+    color: var.$White;
+    font-size: 1.2em;
+    font-weight: 700;
+    .footer__logo{
+        display: block;
+        margin-bottom: 60px;
+    }
+    .caption-links{
+        margin: 30px 0;
+    }
+    .links{
+        color: var.$White;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        a{
+            color: var.$VeryDarkGrayishBlue;
+        }
+        a:hover{
+            color: var.$VeryDarkDesaturatedBlue;
+        }
+    }
+    .attribution{
+        margin-top: 30px;
+        font-size: .7em;
+        a:hover{
+            color: var.$VeryDarkDesaturatedBlue;
+        }
+    }
+    @media (min-width:950px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        font-size: 1.3em;
+
+      
+        .attribution{
+            margin-top: 100px;
+            width: 100%;
+            font-size: .9em;
+        }
+    }
+
+}
+
+/* <-------------------Fin estilos del footer----- */

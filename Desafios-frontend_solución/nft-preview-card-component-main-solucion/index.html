@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <title>NFT preview card component</title>
+</head>
+<body>
+  <main class="card">
+    
+    <!-- contenedor de la imagen -->
+    <section class="card__image">
+      
+      <!-- cambio el div de contenedor por un anchor para que funcione con toda la imgane no solo en el icono -->
+      <a class="card__image__active" href="https://www.frontendmentor.io/profile/LuisJimenez19" target="_blank">
+        
+         <div> <!-- aqui va el la imagen para el hover -->
+          <img  class="icon-view" src="./images/icon-view.svg" alt="img">  
+         </div>     
+
+      </a> 
+
+    </section>
+
+    <!-- contenedor del resto de los items -->
+    <section class="card__description">
+      
+      <h1 class="card__description-title"> <a href="https://github.com/Crist0829" class="link" >Equilibrium #3429</a> </h1> 
+    
+      <p class="card__description-p" >
+        Our Equilibrium collection promotes balance and calm.
+      </p> 
+      
+      <div class="card__description__value" >
+        
+        <span class="card__description__value-et">
+          <img src="./images/icon-ethereum.svg" alt="">
+          0.041 ETH
+        </span> 
+
+
+        <span class="card__description__value-date-time" > 
+          <img src="./images/icon-clock.svg" alt="">
+          3 days left
+        </span>
+        
+      </div>
+      
+
+      
+      <div class="card__description__author" > 
+        <img  class="card__description__author-avatar" src="./images/image-avatar.png" alt=""> 
+        Creation of 
+        <a target="_blank" class="link" href="mailto:luisjian948@gmail.com"  >Jules Wyvern</a> 
+      </div>
+
+      
+        
+
+    </section>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a class="link" href="https://www.frontendmentor.io/profile/LuisJimenez19" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="link" target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
+    <div class="btn-back"  >
+      <a  style="text-decoration: none; color: white;" href="/index.html" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
+  </div>
+  </footer>
+</body>
+</html>

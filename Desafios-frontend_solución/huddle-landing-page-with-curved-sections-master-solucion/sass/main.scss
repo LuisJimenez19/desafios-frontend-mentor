@@ -1,0 +1,525 @@
+@use "var";   /* Partials que contiene los colores y tipo de fuente*/
+@use "mixins";
+*{
+    padding: 0; /* Reseteo basico */
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+
+
+
+body{
+  
+    font-family: var.$font-body;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+    min-width: 330px;  /* Rango de tamaño, esto lo hago pa diverirme pa divertirme */
+    margin: auto;      /* Lo hago para el contenido sea flexible */
+    max-width: 1440px;  /* El ancho del desfio */
+    
+    @media (min-width:1900px) { /* ocupa todo el ancho de mi pantalla*/
+        max-width: 1920px;
+        // background-color: black;
+    }
+    
+}
+
+/* Estilos del header */
+.header{
+    width: 88%;
+    // margin-top: 30px;
+    padding: 30px;
+    @media (min-width:1200px) {  /* Osea que le doy un tamaño y cuando cambie la resolcion le doy otro */
+        width: 100%;
+       
+        
+    }
+    &__nav{
+
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        @media (min-width:1900px) {  /* reposisiono los dos elementos */
+            padding: 10px 180px;
+            
+        }
+
+
+
+        &__logo{
+
+            width: 100px;
+            height: 18px;
+
+            /* BETA */
+            @media (min-width:1200px) { /* Redimensiono */
+                width: 241px;
+                height: 41px;
+                
+            }
+
+        }
+
+        &__btn{
+
+            @include mixins.btn(90px,25px,unset,var.$Pink);
+            box-shadow: unset;
+            &:hover{
+                background-color: unset;
+                border-color: var.$LightPink;
+                color: var.$LightPink;;
+            }
+            
+
+            /* BETA */
+            @media (min-width:1200px) { /* Redimensiono */
+                width: 141px;
+                height: 41px;
+                border-radius: 60px;
+                
+            }
+        }
+    }
+
+}
+/*Fin Estilos del header */
+
+/* Estilos del main */
+.main{
+
+    width: 100%;  /* ocupa todo el ancho */
+    text-align: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Estilos de la descripcion principal */
+    .description{
+        
+        padding: 0 10px;
+        margin-bottom: 100px;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__title{
+            @include mixins.title(1.8em);
+            margin-bottom: 20px;
+
+            @media (min-width:1200px) {
+                @include mixins.title(3.8em)
+                
+            }
+        }
+        &__p{
+            font-weight: 400;
+            color: var.$VeryDarkCyan;
+            margin-bottom: 40px;
+            
+            max-width: 80%;  /* No llegue hasta los bordes */
+            @media (min-width:1200px) {
+                font-size: 1.5em;
+                max-width: 50%;
+            }
+        }
+        &__btn{
+
+            max-width: 300px;  /* Un rango de tamaño */
+            min-width: 100px;
+            @include mixins.btn(40%, 40px,var.$Pink,var.$VeryPaleBlue);
+            border-radius: 20px;
+            margin-bottom: 100px;
+            font-size: 0.7em;
+            font-weight: 600;
+            @media (min-width:1200px) {
+                
+                height: 65px;
+                border-radius: 50px;
+                font-size: 1em;
+            }
+        }
+
+        &__img{  
+ 
+            width: 80%; 
+           
+        }
+    }
+    /* Fin estilos descripcion */
+
+
+
+    /* Estilos de stats */
+    .stats{
+        width: 100%;  /* Todo el ancho */
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../images/bg-section-top-desktop-1.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+
+        @media (min-width:1200px) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            
+        }
+        /* Lo hago con mixins pero esto podría ser con una clase en común */
+        &__formed{
+
+            @include mixins.stats(350%,0.9em); /* Porcentaje para el responsive */
+           
+        }
+        &__messages{
+
+            @include mixins.stats(300%,1em);
+            
+        }
+
+    }
+    /* Fin estilos de stats */
+
+
+
+    /* Estilos de las sesiones */
+
+    /* Pongo todos los estilos de cada sección, solo copie y pegue, tal vez lo haga con un mixin pero queria verlo como se terminaba */
+
+    .section{   /* Decido ponerle una clase en común a todas las secciones */
+
+        width: 100%; /* Todo el ancho, para que el fondo llegue a los extremos */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 100vh; /* cada seccion se vea en toda la panalla */
+        /* padding: 5px 0; */  /* Este padding para poner los fondos */
+        background-color: var.$VeryPaleBlue;
+
+        @media (min-width:1200px) {
+            width: 100%;
+           /*  padding: 200px 0; */  /* Este padding para los fondos */
+            
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+
+
+
+        &__image{
+            align-self: center;
+            width: 80%;  /* Dejo cierto margen a los lados, el fondo si llega a los lados*/
+
+            @media (min-width:1200px) {
+                width: 50%; /* Ocupe la mitad del espacio */
+                padding: 0 60px;
+            }
+        }
+
+
+        &__description{
+
+            margin: 80px auto 30px;
+            height: 280px;
+
+            @media (min-width:1200px) {
+                width: 50%;  /* Ocupa la otra mitad osea el 50% del 80% del main que 100% */
+                text-align: left;
+                padding: 0 50px;
+                font-size: 2em;
+            }
+            &__title{
+
+                @include mixins.title(1.3em);
+                margin-bottom: 15px;
+
+            }
+            &__p{
+                font-size: 1em;
+                margin: 0 10px;
+                line-height: 1.2em;
+                color: var.$VeryDarkCyan;
+            }
+
+        }
+    }
+
+    
+    /* sección conversations */
+    .conversations{
+        padding-top: 100px;
+        background-color: unset;
+        background-image: url(../images/bg-section-top-desktop-2.svg), url(../images/bg-section-bottom-desktop-1.svg);
+        background-position: bottom, top;
+        background-repeat: no-repeat;
+        background-size: contain;  /* El fondo se adapta al contenido */
+
+        @media (min-width:1200px) {
+            padding-top: 200px;
+            flex-direction: row;
+            
+            
+        }
+
+    }
+
+    /* Fin estilos de las secciones */
+
+    /* Estilos de la ultima pregunta */
+    .question{
+
+        width: 100%;
+        background-image: url(../images/bg-section-bottom-desktop-2.svg),url(../images/bg-footer-top-desktop.svg);
+        background-position: top, bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 600px;
+
+        &__title{
+
+            @include mixins.title(1.5em);
+            margin-bottom: 30px;
+            @media (min-width:1200px) {
+                
+                font-weight: 700;
+                font-size: 2em;
+            }
+        }
+
+        &__btn{
+             /* Aqui es donde podria ir un mixin bien hecho, incluyendo la parte responsiva ya que copie y pegue literalmente lo del boton de la description */
+            max-width: 300px; /* un rango en el que el boton crezca */
+            min-width: 100px;
+            @include mixins.btn(40%, 40px,var.$Pink,var.$VeryPaleBlue);
+            border-radius: 20px;
+            margin-bottom: 100px;
+            font-size: 0.7em;
+            font-weight: 600;
+            @media (min-width:1200px) {
+                
+                height: 65px;
+                border-radius: 50px;
+                font-size: 1em;
+            }
+        }
+
+
+    }
+    /*Fin Estilos de la ultima pregunta */
+}
+/* Fin estilos del main */
+
+/* Footer */
+.footer{
+
+    background-color: var.$VeryDarkCyan;
+    color: white;
+    padding: 50px 30px;
+    width: 100%; /* Todo el ancho */
+
+
+    @media (min-width:1200px) {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;  /* atributtion al final */
+        justify-content: space-around;
+        align-items: baseline;
+        
+    }
+
+    /* Sección de la suscribción para consejos */
+    .suscribe{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: white;
+       
+        @media (min-width:1200px) {
+            max-width: 600px; /* Limite */
+            
+            flex-direction: row;
+            font-size: 1.1em;
+        }
+
+
+
+        &__description{
+
+            display: flex;
+            flex-direction: column;
+            
+
+            @media (min-width:1200px) {
+                max-width: 60%;
+            }
+            
+            &__title{
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 1.1em;
+            }
+
+            &__p{
+                font-weight: 700;
+                margin: 20px 0;
+                font-size: 0.9em;
+                line-height: 1.5em;
+            }
+            &__input{
+                width: 100%;
+                height: 50px;
+                border-radius: 10px;
+                border: none;
+                font-size: 1.1em;
+                color: var.$VeryDarkCyan;
+                font-family: 'Courier New', Courier, monospace;
+                transition: outline 0.1s ease;
+                outline: 2px solid var.$VeryDarkCyan;
+                &:focus{
+                    outline: 2px solid var.$Pink;
+                    
+                }    
+            }
+            #emailError{
+                color: crimson;
+                margin-top: 10px;
+                font-size: .9em;
+                display: none;     
+                position: absolute;         /* absoluta para que no me chingue el DOM */   
+                @media (min-width:1200px) {
+                    
+                    font-size: 1em;
+                }
+            }
+        }
+
+        &__btn-container{
+            margin: 22px 0;
+            align-self: flex-end;
+            @media (min-width:1200px) {
+                margin-bottom: 0;
+                margin-left: 20px;
+            }
+            
+        }
+        &__btn{
+            @include mixins.btn(165px, 48px, var.$Pink, white);
+            
+            box-shadow:none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            @media (max-width:390px) {  /* Cuando tenga menos de 390 px has esto */
+                width: 100px;
+            }
+            
+            
+        }
+        
+    }/* Fin sección de suscribición */
+
+    /* Como contactar */
+    .contact{
+        width: 100%;
+        margin: 60px 0 20px;
+
+        @media (min-width:1200px) {
+            width: 300px; /* un tamaño estatico */
+            font-size: 1.1em;
+        }
+        &__description{
+
+            margin-bottom: 50px; 
+
+            &__logo{
+                width: 190px;
+            }
+            &__p{
+                font-weight: 700;
+                font-size: .9em;
+                line-height: 1.5em;
+                margin: 20px 0;
+            }  
+            /* Iconos de contacto */
+            .description__container{
+                width: 80%;
+                
+                &__f{
+                    display: flex;
+                    
+                    margin: 20px 0;
+                    gap: 15px;     /* Separo el icono del texto */               
+
+                    span{
+                        font-weight: 700;
+                        font-size: .9em;
+
+                    }
+                }
+            }
+        }
+
+        /* Iconos de redes sociales */
+        &__redes{
+            display: flex;
+            gap: 10px;
+            a{
+                color: white;
+                transition: color .3s;
+            }
+            a:hover{
+                color:#999;
+            }
+            @media (min-width:1200px) {
+                margin-top: 80px;
+                
+            }
+
+        }
+
+    }/* Fin de contactar */
+    .attribution{
+        margin: 50px 0 0;
+        font-size: .8em;
+        text-align: center;
+
+        @media (min-width:1200px) {
+            width: 100%;   /* Ocupa toda la fila que se crea */
+            font-size: 1em;
+        }
+
+        a{
+            color: slateblue;
+            &:hover{
+                transition: color .3s;
+                color:#999;
+            }
+        }
+    }
+
+}

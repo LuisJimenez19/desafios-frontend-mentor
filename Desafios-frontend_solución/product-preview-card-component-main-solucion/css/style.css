@@ -1,0 +1,197 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+/* -------------Variables----------- */
+:root{
+    /* primary */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    
+}
+/*  */
+body{
+    
+    background-color: var(--cream); 
+    
+}
+/* ----------------------------mobile 375px---------------------------------- */
+
+/* --------Estilos de la tarjeta completa */
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 375px; 
+    height: 680px;
+    margin: auto;
+    
+    
+}
+
+.main__card{
+
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 1s;
+}
+
+
+/* -----Estilos de la imagen */
+.card__section-image__img{
+    width: 100%;
+    
+}
+
+
+
+/* -------------Estilos de la sección de la descripción */
+.card__section-description{
+
+    font-family: Montserrat, sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+
+}
+.card__section-description__name{
+
+    color: var(--dark-grayish-blue);
+    padding: 10px 0 10px 0;
+    font-weight: lighter;
+    letter-spacing: 3px;
+
+}
+
+.card__section-description__title{
+
+    color: var(--very-dark-blue);
+    font-family: fraunces, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+
+}
+
+.card__section-description__p{
+
+    line-height: 25px;
+
+}
+
+.card__section-description__price{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.card__section-description__price-discount{
+
+    margin: 20px 20px 20px 0;
+    font-family: fraunces;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-cyan);
+
+}
+
+.card__section-description__price-original{
+
+    text-decoration: line-through;
+
+}
+
+.card__section-description__buton{
+    
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    transition: background .5s;
+
+}
+
+
+
+.attribution{
+
+    font-family: montserrat;
+    font-size: 12px;
+    text-align: center;
+
+}
+.attribution a{
+    
+    text-decoration: none;
+    color: #1a4031;
+
+}
+
+/* ------------------------------Desktop 600px----------------------- */
+@media screen and (min-width:600px) {
+
+    .main{
+        width: 600px;
+        height: 450px;
+        margin: 200px auto;
+        
+    }
+    
+    .main__card{
+        flex-direction: row;
+        width: 600px;
+        height: 450px;
+        
+    }
+    .main__card:hover{
+
+        box-shadow: 5px 5px 30px var(--white), -5px -5px 30px var(--white);
+    
+    }
+
+    
+
+    .card__section-image img{
+        
+        content: url(../images/image-product-desktop.jpg);
+        width: 300px;
+        height: 100%;
+        
+
+    }
+    .card__section-description__buton:hover{
+
+        background-color: #1a4031;
+        cursor: pointer;
+    
+    }
+    .attribution{
+        position: relative;
+        top:30px;
+
+    }
+  
+
+   
+}

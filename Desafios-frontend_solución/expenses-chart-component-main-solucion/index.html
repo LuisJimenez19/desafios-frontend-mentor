@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Frontend Mentor | Expenses chart component</title>
+</head>
+<body>
+
+
+  <div class="card">
+    
+    <div class="balance">
+      
+      
+      <div>
+        <p class="balance__caption">My balance</p>
+        <p class="balance__amount" >$921.48</p>
+      </div>
+
+      <picture class="balance__logo">
+        <img src="./images/logo.svg" alt="logo">
+      </picture>
+
+    </div>
+
+    <main class="card-container">
+
+      <div class="details">
+  
+        <h1 class="details__title">Spending - Last 7 days</h1>
+  
+        <div  id="chart" class="details__chart">
+
+        </div>
+      </div>
+      
+      <div class="stadistics">
+  
+        <div>
+          <p class="month__caption">Total this month</p>
+          <p class="month__amount">$478.33</p>
+        </div>
+  
+        <div class="stadistics__porcentaje">
+          <p class="porcenaje">+2.4%</p>
+          <p class="last-month">from last month</p>
+        </div>
+  
+      </div>
+      
+    </main>
+
+  </div>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
+    <div class="btn-back">
+      <a href="/index.html" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
+  </div>
+  </footer>
+
+
+
+  <script src="./js/main.js" type="module" ></script>
+</body>
+</html>

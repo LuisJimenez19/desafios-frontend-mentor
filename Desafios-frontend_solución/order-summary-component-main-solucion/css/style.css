@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root{
+    
+    /* ### Primary */
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    /* ### Neutral */
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+    --Very-pale-blue-suave: hsla(225, 17%, 86%, 0.278);
+
+}
+/* Reseteo basico */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos, tamaño y tipo de fuente */
+
+body{
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: var(--Pale-blue);
+    text-align: center;
+}
+/* Fin de estilos al body */
+
+
+/* Estilos y dimensiones a la targeta*/
+.main{
+    background-color: var(--Very-pale-blue);
+    max-width: 330px;
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* fin de estilos a la targeta */
+
+/* imagen */
+.main__image {
+
+    content: url(../images/illustration-hero.svg);
+    width: 100%; 
+}
+/* Fin de imagen */
+
+/* Estilos de la descripción de la targeta */
+
+/* Titulo */
+.content__title{
+
+    font-weight: 900;
+    margin: 30px auto;
+    color: var(--Dark-blue);
+}
+/* Fin titulo */
+
+
+/* Estilos de la descripción */
+.content__p{
+    color: var(--Desaturated-blue);
+    font-weight: 500;
+    width: 80%;    
+    margin: 0 auto 20px;
+
+}
+/* Fin estilos de la descripción */
+
+
+/* Esilos, dimensiones, posicionamiento del plan*/
+.content__plan{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 60px;
+    padding: 40px 0;
+    border-radius: 10px;
+    margin: auto;
+    background-color: var(--Very-pale-blue-suave);
+    color: var(--Desaturated-blue);
+    font-size: 0.80em;
+}
+/* fin del plan */
+
+/* Estilos del precio y el nombre del plan */
+.content__plan__descripion{
+    transform: translate(-20px); 
+}
+/* Fin del precio y nombre del plan */
+
+
+/* Estilos del titulo del plan */
+.content__plan__descripion-title{
+    color: var(--Dark-blue);
+    font-weight: 900;
+    font-size: 1.2em;
+}
+/* fin del titulo del plan */
+
+
+/* Añado el icono */
+.content__plan__icon{
+
+    width: 50px;
+    height: 50px;
+    content: url(../images/icon-music.svg);
+    border-radius: 50%;
+}
+/* Fin del icono */
+
+
+/* Link*/
+.content__plan__descripion-change{
+    color: var(--Bright-blue);
+    font-weight: 700;
+}
+/* fin del link */
+/* Fin del plan */
+
+/* Estilos del contenedor de los botones */
+.content__btn{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 30px auto;
+    
+}
+/* fin de estilos de contenedor de botones */
+
+/*Pruebo las distintas clases para seleccrionar con estos botones*/
+
+.btn{
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-weight: 700;
+    font-size: 1.05em;
+    transition: all 0.3s linear;
+}
+
+/* Boton para pagar */
+.content__btn__pay{
+
+    color: var(--Very-pale-blue);
+    background-color: var(--Bright-blue);
+    box-shadow: 0px 10px 20px hwb(245 16% 12% / 0.3); 
+    
+}
+/* fin de boton pagar */
+
+/* boton cancelar */
+.content__btn__cancel{
+    background-color: unset;
+    color: var(--Desaturated-blue);
+    
+}
+/*fin boton cancelar */
+
+
+
+/* Footer */
+.attribution{
+    
+    font-size: 0.85em;
+    color: var(--Dark-blue);
+}
+
+.attribution a{
+    text-decoration: none;
+    color: var(--Bright-blue);
+}
+/* fin footer */
+
+
+/* ----------------------------------Desktop----------------------------- */
+
+/* Lo unico que hago es centrar mas y poner los efectos del hover */
+
+
+
+@media (min-width:800px) {
+
+    .main{
+        margin: 100px auto;
+        max-width: 375px;
+    }
+    
+    .content__btn__pay:hover{
+        background-color: hwb(245 16% 12% / 0.9);
+        cursor: pointer;
+        transform: scale(0.99);
+    }
+
+    .content__btn__pay:active{
+
+        background-color: hwb(245 16% 12% / 0.5);
+
+    }
+
+
+    .content__btn__cancel:hover{
+        font-size: 1.01em;
+        cursor: pointer;
+    }
+
+    
+    .content__btn__cancel:active{
+        font-weight: 900;
+    }
+    
+    a:hover{
+        color: var(--Desaturated-blue);
+        text-decoration: none;
+    }
+}
+

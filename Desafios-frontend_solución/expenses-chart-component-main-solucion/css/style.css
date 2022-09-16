@@ -1,0 +1,272 @@
+:root{
+    /* ## Colors */
+    /* ### Primary */
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    
+    /* ### Neutral */
+    
+    
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+    
+    /* ## Typography */
+    --font:'DM Sans', sans-serif;;
+  
+}
+
+/* reseteo basico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Cream);
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 18px;
+    font-family: var(--font);
+
+
+}
+
+.card{
+   
+    width: 90%;
+    
+    max-width: 540px;
+    margin: 50px auto;
+
+    
+}
+
+
+
+.balance{
+    background-color: var(--Soft-red);
+
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--Very-pale-orange);
+
+}
+
+    .balance__caption{
+        font-size: smaller;
+        margin-bottom: 10px;
+    }
+    .balance__amount{
+        font-size: x-large;
+        font-weight: 700;
+    }
+    .balance__logo img{
+        width: 80%;
+    }
+
+.card-container{
+    
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--Very-pale-orange);
+    padding: 25px 0px;
+}
+
+    /* Contennedor del grafico y el titulo */
+    .details{
+        margin: auto;
+        width: 90%;
+    }
+
+    .details__title{
+        font-size: 1.3em;
+        color: var(--Dark-brown);
+        margin-bottom: 10px;
+    }
+
+    /* Contenedor de las barras */
+    .details__chart{
+
+
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        align-items: flex-end;
+         
+        margin: 30px 0 ;
+    }
+
+        /* Contenedor de las barras, los labels y el dia */
+        .chart__bar{
+
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+  
+            .bar__amount{
+                
+                align-self: center;    
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               
+
+                color: var(--Very-pale-orange);
+                background-color: var(--Dark-brown);
+                
+                width: 110%;
+                height: 30px;
+
+                font-size: .8em;
+                font-weight: bold;
+                border-radius: 5px;
+                margin-bottom: 5px;
+
+                transition: opacity .2s linear;
+                
+            }
+
+            .d-opacity{
+                opacity: 0;
+            }
+            
+            /* Barra */
+            .bar{
+
+                border-radius: 5px;
+                background-color: var(--Soft-red);
+                
+                margin: 0 6px; /* Con el margion hago que se separen las barras, el gap en su contenedor hace que se salgan del mismo */
+                /* height: 250px; */
+                margin-bottom: 10px;
+                cursor: pointer;
+
+                transition: filter .2s linear;
+            }
+           
+
+            .bar--active{
+                filter: brightness(1.2);
+            }
+
+            
+            
+            .bar__day{
+                font-size: .65em;
+                text-align: center;
+                color:var(--Medium-brown) ;
+            }
+
+        
+
+
+
+            /* Contendeor de las estadisticas del mes anterior */
+    .stadistics{
+
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 85%;
+        
+        padding-top: 20px;
+        border-top: 3px solid var(--Cream);
+    }
+    
+    .month__caption{
+        color: var(--Medium-brown);
+        font-size: .98em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .month__amount{
+        
+        font-size: 1.5em;
+        font-weight: 600;
+
+        color: var(--Dark-brown);
+        text-align: start;
+
+    }
+
+    .porcenaje{
+        font-size: .9em;
+        font-weight: 700;
+        color: var(--Dark-brown);
+        text-align: right;
+        
+    }
+    .last-month{
+        color: var(--Medium-brown);
+    }
+
+
+
+
+.attribution{
+    font-size: .8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    color: var(--Soft-red);
+}
+a:hover{
+    border-bottom: 1px solid var(--Dark-brown);
+}
+
+/* <---------------------------desktop--------------------------------> */
+@media (min-width:950px) {
+   
+    .card{
+        margin: 100px auto ; 
+    }
+
+    .balance{
+        height: 120px;
+    }
+        .balance__caption{
+            font-size: large;
+        }
+        .balance__amount{
+            font-size: xx-large;
+        }
+        .balance__logo img{
+            width: 90%;
+        }
+
+    
+    .details__title{
+        font-size: 2em;
+    }
+
+    
+    .bar{
+        margin: 0 10px;
+        margin-bottom: 15px;
+    }
+
+    .month__amount{
+        
+        font-size: 2.3em;
+        font-weight: 600;
+
+    }
+}
