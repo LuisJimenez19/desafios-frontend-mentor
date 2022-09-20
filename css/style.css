@@ -53,7 +53,9 @@ ul{
     padding: 0 0px 50px;
     overflow: hidden;
 
-    background: radial-gradient(#1e1e3683,#1e1e36 80%), url(/src/header-background-programacion.jpg);
+    /* background: radial-gradient(#1e1e3683,#1e1e36 80%), url(/src/header-background-programacion.jpg); */ /* No me carga en git hub */
+    background: radial-gradient(#1e1e3683,#1e1e36 80%), url(https://fondosmil.com/fondo/52894.jpg);  /* Uso el archivo en linea, se demora mas en cargar */
+
     background-size: cover;
     background-position: center;
     
@@ -537,10 +539,11 @@ ul{
     align-items: flex-start;
     flex-wrap: wrap;
 
-    background-image: url(/src/footer-background.png);
+    /* background-image: url(/src/footer-background.png); */
+    background:radial-gradient(#11111fbd ,#11111f 70%), url(https://midu.dev/images/wallpapers/una-taza-de-javascript.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 
     
 
