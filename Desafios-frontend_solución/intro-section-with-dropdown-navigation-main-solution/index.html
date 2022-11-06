@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+</head>
+
+<body>
+    <!----------------------------------------------------------header---------------------- -->
+    <header class="header">
+
+        <div class="header__logo"><img src="./images/logo.svg" alt="logo"></div>
+
+        <!-- nav y botones de login, el mismo nav va hacer de modal -->
+        <!-- nav-modal -->
+        <nav class="nav-bakcground d-none">
+
+            <div class="nav">
+
+                <!-- contiene los acordeones -->
+                <div class="nav-menu">
+
+                    <!-- contiene el acordion y los details -->
+                    <div class="nav__acordion ">
+
+                        <p class="nav__summary nav__caption">Features <span class="icon-arrow"><img
+                                    src="./images/icon-arrow-down.svg" alt=""></span></p>
+
+                        <ul class="nav__links">
+                            <li class="nav__link">
+                                <img class="link-icon" src="./images/icon-todo.svg" alt=""><a class="link-anchor"
+                                    href="#">Todo List</a>
+                            </li>
+                            <li class="nav__link">
+                                <img class="link-icon" src="./images/icon-calendar.svg" alt=""><a class="link-anchor"
+                                    href="#">Calendar</a>
+                            </li>
+                            <li class="nav__link">
+                                <img class="link-icon" src="./images/icon-reminders.svg" alt=""><a class="link-anchor"
+                                    href="#">Reminders</a>
+                            </li>
+                            <li class="nav__link">
+                                <img class="link-icon" src="./images/icon-planning.svg" alt=""><a class="link-anchor"
+                                    href="#">Planning</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="nav__acordion">
+
+                        <p class="nav__summary nav__caption">Company<span class="icon-arrow"><img
+                                    src="./images/icon-arrow-down.svg" alt=""></span></p>
+
+                        <ul class="nav__links">
+                            <li class="nav__link">
+                                <a class="link-anchor" href="#">History</a>
+                            </li>
+                            <li class="nav__link">
+                                <a class="link-anchor" href="#">Our Team</a>
+                            </li>
+                            <li class="nav__link">
+                                <a class="link-anchor" href="#">Blog</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- estos items no tienen acordeon -->
+                    <div>
+                        <a class="nav__caption" href="#">Careers</a>
+                    </div>
+
+                    <div>
+                        <a class="nav__caption" href="#">About</a>
+                    </div>
+
+                </div>
+
+                <!-- botones de login -->
+                <div class="nav__btns">
+
+                    <a href="#" class="nav__loginBtn nav__btn">Login</a>
+                    <a href="#" class="nav__registerBtn nav__btn">Register</a>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- iconos para mobil -->
+        <div class="header__icons-bar">
+            <img src="./images/icon-menu.svg" alt="" class="icon--active header__icon-menu">
+            <img src="./images/icon-close-menu.svg" alt="" class=" header__icon-close">
+        </div>
+
+
+    </header>
+    <!----------------------------------------------------------fin header---------------------- -->
+
+
+    <!----------------------------------------------------------contenedor principal---------------------- -->
+    <main class="main-container">
+        <section class="hero">
+            <!-- background en css -->
+        </section>
+
+        <section class="principal">
+            <h1 class="principal__title"> <span>Make</span> remote work</h1>
+            <p class="principal__p"> Get your team in sync, no matter your location. Streamline processes, create team
+                rituals, and watch productivity soar.</p>
+
+            <a href="#" class="principal__btn-learn">Learn more</a>
+
+
+            <div class="marks">
+
+                <div>
+                    <img class="mark" src="./images/client-databiz.svg" alt="">
+                </div>
+
+                <div>
+                    <img class="mark" src="./images/client-audiophile.svg" alt="">
+                </div>
+
+                <div>
+                    <img class="mark" src="./images/client-meet.svg" alt="">
+                </div>
+
+                <div>
+                    <img class="mark" src="./images/client-maker.svg" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <!----------------------------------------------------------fin contenedor principal---------------------- -->
+
+
+
+
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
+        <div class="btn-back">
+            <a href="#" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
+        </div>
+    </footer>
+
+    <script src="/js/btnHome.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+$white:#fff;
+// ### Primary
+
+$Blue: hsl(246, 80%, 60%);
+$Soft-blue: hsl(195, 74%, 62%);       /* (play) */
+$Light-orange: hsl(15, 100%, 70%);       /* (work) */
+$Light-red: hsl(348, 100%, 68%);      /* (study) */
+$Lime-green: hsl(145, 58%, 55%);      /* (exercise) */
+$Violet: hsl(264, 64%, 52%);          /* (social) */
+$Soft-orange: hsl(43, 84%, 65%);      /* (self care) */
+
+// ### Neutral
+
+$Very-dark-blue: hsl(226, 43%, 10%);
+$Dark-blue: hsl(235, 46%, 20%);
+$Desaturated-blue: hsl(235, 45%, 61%);
+$Pale-Blue: hsl(236, 100%, 87%);
+
+/* Rounded */
+$rounded-card:20px;
+
+// ## Typography
+$font-s:18px;
+$font:'Rubik', sans-serif;
+// ### Body Copy
+
+// - Font size: 18px (card titles e.g. Work, Play)
+
+// ### Font
+
+// - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+// - Weights: 300, 400, 500

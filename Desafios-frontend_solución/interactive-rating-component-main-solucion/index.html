@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Frontend Mentor | Interactive rating component</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Frontend Mentor | Interactive rating component</title>
 </head>
+
 <body>
 
- 
-  <div class="card">
 
-    <div class="assessment ">
-      
-      <div class="assessment__description">
+    <div class="card">
 
-        <div class="assessment__description__star"></div>  
+        <div class="assessment ">
 
-        <h1 class="assessment__description__title" >How did we do?</h1>
-        
-        <p class="assessment__description__p">
-          Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-      </div>
+            <div class="assessment__description">
 
-      <div class="score">
+                <div class="assessment__description__star"></div>
 
-        <ul class="score__mark-container" >
-          <li class="score__mark option " id="1" >1</li>
-          <li class="score__mark option " id="2" >2</li>
-          <li class="score__mark option " id="3" >3</li>
-          <li class="score__mark option " id="4" >4</li>
-          <li class="score__mark option " id="5" >5</li>
-        </ul>
-        <input type="hidden" id="valueSelected" value="">
-        <button class="score__btn" id="submit" >Submit</button>
+                <h1 class="assessment__description__title">How did we do?</h1>
 
-      </div>
-    
+                <p class="assessment__description__p">
+                    Please let us know how we did with your support request. All feedback is appreciated to help us
+                    improve our offering!</p>
+            </div>
 
+            <div class="score">
+
+                <ul class="score__mark-container">
+                    <li class="score__mark option " id="1">1</li>
+                    <li class="score__mark option " id="2">2</li>
+                    <li class="score__mark option " id="3">3</li>
+                    <li class="score__mark option " id="4">4</li>
+                    <li class="score__mark option " id="5">5</li>
+                </ul>
+                <input type="hidden" id="valueSelected" value="">
+                <button class="score__btn" id="submit">Submit</button>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="gratitude d-none">
+
+            <div class="gratitude__img">
+                <img src="./images/illustration-thank-you.svg" alt="img thanks">
+                <p id="msgSelected" class="gratitude__img__selected">You selected out of 5</p>
+            </div>
+
+            <div class="gratitude__message">
+
+                <h2 class="gratitude__message__title">Thank you!</h2>
+
+                <p class="gratitude__message__p">
+                    We appreciate you taking the time to give a rating. If you ever need more support,
+                    don’t hesitate to get in touch!
+                </p>
+
+
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="gratitude d-none">
 
-      <div class="gratitude__img">
-        <img src="./images/illustration-thank-you.svg" alt="img thanks">
-        <p id="msgSelected" class="gratitude__img__selected" >You selected out of 5</p>
-      </div>
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/LuisJimenez19" target="_blank">Luis Angel</a>.
 
-      <div class="gratitude__message">
+        <div class="btn-back" style="color: #fff;">
+            <a href="#" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
+        </div>
 
-        <h2 class="gratitude__message__title" >Thank you!</h2>
-        
-        <p class="gratitude__message__p">
-          We appreciate you taking the time to give a rating. If you ever need more support, 
-          don’t hesitate to get in touch!
-        </p>
-      
 
-      </div>
+    </footer>
+    <button class="btn d-none">⬅</button>
 
-    </div>
 
-  </div>
-
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/LuisJimenez19" target="_blank" >Luis Angel</a>.
-    
-    <div style="color: #fff;" class="btn-back">
-      <a href="/index.html" rel="noopener noreferrer" class="btn--active">↺ Home</a>
-   </div>
-    
-    
-  </footer>
-  <button class="btn d-none" >⬅</button>
-  
-
-  <script src="/js/btnHome.js"></script>
-  <script src="./main.js" ></script>
+    <script src="/js/btnHome.js"></script>
+    <script src="./main.js"></script>
 </body>
+
 </html>

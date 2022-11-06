@@ -1,0 +1,19 @@
+@use 'variables' as v;
+.card-work{
+    background-color: v.$Light-orange;
+}
+.card-play{
+    background-color: v.$Soft-blue;
+}
+.card-study{
+    background-color: v.$Light-red;
+}
+.card-exercise{
+    background-color: v.$Lime-green;
+}
+.card-social{
+    background-color: v.$Violet;
+}
+.card-self{
+    background-color: v.$Soft-orange;
+}

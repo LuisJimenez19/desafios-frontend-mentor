@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Advice generator app</title>
+
+<body>
+
+    <main class="card-container">
+        <div class="advice">
+
+            <h1 class="advice__title">good vibes<span id="indexAdvice"></span> </h1>
+            <p class="advice__paragraph">"click on the dice to get your advice"</p>
+
+        </div>
+        <div class="wave"></div>
+        <div class="btnGenerator"></div>
+    </main>
+
+    <div class="errorModal-background d-none">
+        <div class="errorModal">
+            <p class="error">Ha ocurrido un error, asegurese de tener conexion a internet</p>
+        </div>
+    </div>
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
+        <div class="btn-back">
+            <a href="#" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
+        </div>
+    </footer>
+    <script src="/js/btnHome.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

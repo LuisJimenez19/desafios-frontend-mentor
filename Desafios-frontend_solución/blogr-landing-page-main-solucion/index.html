@@ -1,347 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Frontend Mentor | [Blogr]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Frontend Mentor | [Blogr]</title>
 
 
 </head>
+
 <body>
 
-  <header class="header">
+    <header class="header">
 
 
-    <!-- Contenedor para el logo y el nav -->
-    <div class="header__nav-container">
+        <!-- Contenedor para el logo y el nav -->
+        <div class="header__nav-container">
 
-      <picture class="header__logo">
-        <a href="#">
-          <img  src="./images/logo.svg" alt="Logo Blogr" class="logo">
-        </a>
-      </picture>
+            <picture class="header__logo">
+                <a href="#">
+                    <img src="./images/logo.svg" alt="Logo Blogr" class="logo">
+                </a>
+            </picture>
 
-      <!-- Nav hambuguer mobile -->
-      <nav class="nav-hamburguer " >
-      
-        <span class="icon-container" id="icon-container" >
-          <!-- icon--active -->
-          <img id="hamburguer" class="icon-hamburger icon icon--active" src="./images/icon-hamburger.svg" alt="|||">
-          <img  id="close" class="icon-close icon " src="./images/icon-close.svg" alt="X">
+            <!-- Nav hambuguer mobile -->
+            <nav class="nav-hamburguer ">
 
-        </span>
+                <span class="icon-container" id="icon-container">
+                    <!-- icon--active -->
+                    <img id="hamburguer" class="icon-hamburger icon icon--active" src="./images/icon-hamburger.svg"
+                        alt="|||">
+                    <img id="close" class="icon-close icon " src="./images/icon-close.svg" alt="X">
 
-            <!-- nav-hamburger__bar--active -->
-        <div id="nav-mobile" class="nav-hamburguer__bar ">
-          
-          <details class="nav__details">
+                </span>
 
-            <summary class="nav__details__summary">Product <span class="icon-arrow"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
+                <!-- nav-hamburger__bar--active -->
+                <div id="nav-mobile" class="nav-hamburguer__bar ">
+
+                    <details class="nav__details">
+
+                        <summary class="nav__details__summary">Product <span class="icon-arrow"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Overview</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Marketplace</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Features</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Integrations</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </details>
+
+                    <details class="nav__details">
+                        <summary class="nav__details__summary">Company <span class="icon-arrow"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">About</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Team</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Blog</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Careers</a></li>
+
+                            </ul>
+                        </div>
+
+                    </details>
+
+                    <details class="nav__details">
+                        <summary class="nav__details__summary">Connect <span class="icon-arrow"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+
+
+                    <div class="nav__register">
+
+                        <button class="btn nav__register__login">Login</button>
+                        <button class="btn nav__register__singUp">Sign Up</button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+            <!-- Nav hambuguer mobile -->
+
+
+            <!-- Nav desktop -->
+            <nav class="nav-bar"" id=" nav-desktop">
+
+
+                <div class="nav-bar__left">
+
+                    <picture class="header__logo-desktop">
+                        <img src="./images/logo.svg" alt="Logo Blogr" class="logo">
+                    </picture>
+
+                    <details class="nav__details">
+                        <summary class="nav__details__summary">Product <span class="icon-arrow-gray"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Overview</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Pricing</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Marketplace</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Features</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Integrations</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </details>
+
+                    <details class="nav__details">
+                        <summary class="nav__details__summary">Company <span class="icon-arrow-gray"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">About</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Team</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Blog</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Careers</a></li>
+
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="nav__details">
+                        <summary class="nav__details__summary">Connect <span class="icon-arrow-gray"></span> </summary>
+                        <div class="links-container">
+                            <ul class="summary__links">
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Newsletter</a>
+                                </li>
+                                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+
+                </div>
+
+                <div class="nav__register">
+
+                    <button class="btn nav__register__login">Login</button>
+                    <button class="btn nav__register__singUp">Sign Up</button>
+
+                </div>
+            </nav>
+            <!-- Nav desktop -->
+        </div>
+
+
+
+        <div class="header__publishing">
+            <div class="publishing-container">
+                <h2 class="header__publishing__title">A modern publishing platform</h2>
+                <p class="header__publishing__p">Grow your audience and build your online brand</p>
+
+            </div>
+            <div class="header__publishing__btns">
+
+                <button class="btn publishing__start">Start for Free</button>
+                <button class="btn publishing__learn">Learn More</button>
+
+            </div>
+
+
+        </div>
+
+
+
+    </header>
+
+
+    <!-- --------main-------------- -->
+    <main class="main-container">
+        <!-- 1era sección -->
+        <section class="section section-editor">
+
+            <h2 class="section__title editor__title">Designed for the future</h2>
+
+            <picture class="section-editor__img" data-aos="zoom-in-left"> <img
+                    src="./images/illustration-editor-mobile.svg" alt="image editor"></picture>
+
+            <div data-aos="zoom-in-left" class="section-editor__description">
+
+                <h2 class="section__title ">Introducing an extensible editor</h2>
+                <p class="section__p">
+
+                    Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating
+                    content.
+                    The editor supports management of multiple blogs and allows easy manipulation of embeds such as
+                    images,
+                    videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality
+                    or
+                    change the looks of a blog.
+
+                </p>
+
+                <h2 class="section__title">Robust content management</h2>
+
+                <p class="section__p">
+                    Flexible content management enables users to easily move through posts. Increase the usability of
+                    your blog
+                    by adding customized categories, sections, format, or flow. With this functionality, you’re in full
+                    control.
+                </p>
+
+            </div>
+        </section>
+        <!-- 1era sección -->
+
+
+        <!-- 2da sección -->
+
+        <section class="section section-infrastructure">
+            <!-- Imagen mobile -->
+            <div class="section-infrastructure__img">
+                <!-- <img src="./images/illustration-phones.svg" alt=""> -->
+            </div>
+
+            <div data-aos="zoom-in-left" class="container-details">
+                <!-- Cuando este en desktop -->
+                <div data-aos="zoom-in-left" class="section-infrastructure__img-desktop"><img
+                        src="./images/illustration-phones.svg" alt=""></div>
+
+                <div class="">
+
+                    <h2 class="section__title section-infrastructure__title">State of the Art Infrastructure</h2>
+
+                    <p class="section__p">
+                        With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast
+                        connectivity.
+                        This ensures your site will load instantly, no matter where your readers are, keeping your site
+                        competitive.
+                    </p>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2da sección -->
+
+        <section class="section section-laptop">
+
+            <picture data-aos="flip-down" class="section-laptop__img"><img src="./images/illustration-laptop-mobile.svg"
+                    alt=""></picture>
+
+            <div data-aos="zoom-in-left" class="section-laptop__description">
+
+                <h2 class="section__title">Free, open, simple</h2>
+                <p class="section__p">
+
+                    Blogr is a free and open source application backed by a large community of helpful developers. It
+                    supports
+                    features such as code syntax highlighting, RSS feeds, social media integration, third-party
+                    commenting tools,
+                    and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to
+                    learn.
+
+
+
+                </p>
+
+                <h2 class="section__title">Powerful tooling</h2>
+                <p class="section__p">
+
+                    Batteries included. We built a simple and straightforward CLI tool that makes customization and
+                    deployment a breeze, but
+                    capable of producing even the most complicated sites.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <picture class="footer__logo"><img src="./images/logo.svg" alt="Logo Blogr"></picture>
+
+
+        <div class="links-container">
+            <p class="caption-links">Product</p>
+            <ul class="links">
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Overview</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Pricing</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Features</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Integrations</a></li>
-              </ul>
-            </div>
-  
-          </details>
-  
-          <details class="nav__details">
-            <summary class="nav__details__summary">Company <span class="icon-arrow"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
+            </ul>
+        </div>
+
+
+
+
+        <div class="links-container">
+            <p class="caption-links">Company</p>
+            <ul class="links">
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">About</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Team</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Blog</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Careers</a></li>
-               
-              </ul>
-            </div>
-  
-          </details>
-  
-          <details class="nav__details">
-            <summary class="nav__details__summary">Connect <span class="icon-arrow"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
+
+            </ul>
+        </div>
+
+
+
+        <div class="links-container">
+            <p class="caption-links">Connect</p>
+            <ul class="links">
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
                 <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              </ul>
-            </div>
-          </details>
-          
-    
-  
-          <div class="nav__register">
-    
-            <button class="btn nav__register__login" >Login</button>
-            <button class="btn nav__register__singUp" >Sign Up</button>
-            
-          </div>
-
+            </ul>
         </div>
 
-      </nav>
-      <!-- Nav hambuguer mobile -->
-
-
-      <!-- Nav desktop -->
-      <nav class="nav-bar"" id="nav-desktop" >
-
-        
-        <div class="nav-bar__left">
-        
-          <picture class="header__logo-desktop">
-            <img  src="./images/logo.svg" alt="Logo Blogr" class="logo">
-          </picture>
-  
-          <details class="nav__details">
-            <summary class="nav__details__summary">Product <span class="icon-arrow-gray"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Overview</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Pricing</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Features</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Integrations</a></li>
-              </ul>
-            </div>
-  
-          </details>
-  
-          <details class="nav__details">
-            <summary class="nav__details__summary">Company <span class="icon-arrow-gray"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">About</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Team</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Blog</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Careers</a></li>
-               
-              </ul>
-            </div>
-          </details>
-  
-          <details class="nav__details">
-            <summary class="nav__details__summary">Connect <span class="icon-arrow-gray"></span> </summary>
-            <div class="links-container" >
-              <ul class="summary__links">
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
-                <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              </ul>
-            </div>
-          </details>
-          
-    
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
         </div>
 
-        <div class="nav__register">
-  
-          <button class="btn nav__register__login" >Login</button>
-          <button class="btn nav__register__singUp" >Sign Up</button>
-          
+
+        <div class="btn-back">
+            <a href="#" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
         </div>
-      </nav>
-      <!-- Nav desktop -->
-    </div>
-    
-    
-  
-    <div class="header__publishing">
-      <div class="publishing-container" >
-        <h2 class="header__publishing__title">A modern publishing platform</h2>
-        <p class="header__publishing__p" >Grow your audience and build your online brand</p>
-        
-      </div>
-      <div class="header__publishing__btns">        
-
-        <button class="btn publishing__start" >Start for Free</button>
-        <button class="btn publishing__learn" >Learn More</button>
-
-      </div>
-
-
-    </div>
-
- 
-
-  </header>
-
-
-  <!-- --------main-------------- -->
-  <main class="main-container">
-    <!-- 1era sección -->
-    <section class="section section-editor">
-      
-      <h2 class="section__title editor__title">Designed for the future</h2>
-      
-      <picture  class="section-editor__img" data-aos="zoom-in-left"> <img src="./images/illustration-editor-mobile.svg" alt="image editor"></picture>
-
-      <div data-aos="zoom-in-left" class="section-editor__description">
-
-        <h2 class="section__title ">Introducing an extensible editor</h2>
-        <p class="section__p">
-          
-          Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-          The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-          videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-          change the looks of a blog.
-
-        </p>
-
-        <h2 class="section__title">Robust content management</h2>
-        
-        <p class="section__p">
-          Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-          by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
-        </p>
-
-      </div>
-    </section>
-    <!-- 1era sección -->
-
-
-    <!-- 2da sección -->
-
-    <section class="section section-infrastructure">
-      <!-- Imagen mobile -->
-      <div  class="section-infrastructure__img"><!-- <img src="./images/illustration-phones.svg" alt=""> --></div>
-      
-      <div data-aos="zoom-in-left" class="container-details">
-        <!-- Cuando este en desktop -->
-        <div data-aos="zoom-in-left" class="section-infrastructure__img-desktop"><img src="./images/illustration-phones.svg" alt=""></div>
-
-        <div class="">
-          
-          <h2 class="section__title section-infrastructure__title">State of the Art Infrastructure</h2>
-          
-          <p class="section__p">
-            With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-          </p>
-        
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 2da sección -->
-
-    <section class="section section-laptop">
-      
-      <picture data-aos="flip-down" class="section-laptop__img"><img src="./images/illustration-laptop-mobile.svg" alt=""></picture>
-
-      <div data-aos="zoom-in-left"class="section-laptop__description">
-
-        <h2 class="section__title">Free, open, simple</h2>
-        <p class="section__p">
-          
-          Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-          features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-          and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-        
-
-          
-        </p>
-
-        <h2 class="section__title">Powerful tooling</h2>
-        <p class="section__p">
-          
-          Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-          capable of producing even the most complicated sites.
-
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer class="footer">
-    
-    <picture class="footer__logo"><img src="./images/logo.svg" alt="Logo Blogr"></picture>
-
-    
-    <div class="links-container" >
-      <p class="caption-links" >Product</p>
-      <ul class="links">
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Overview</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Pricing</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Features</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Integrations</a></li>
-      </ul>
-    </div>
-    
-  
-    
-  
-    <div class="links-container" >
-      <p class="caption-links" >Company</p>
-      <ul class="links">
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">About</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Team</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Blog</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Careers</a></li>
-        
-      </ul>
-    </div>
-  
-    
-    
-    <div class="links-container" >
-      <p class="caption-links" >Connect</p>
-      <ul class="links">
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
-        <li class="link"> <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      </ul>
-    </div>
-
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a target="_blank" href="https://github.com/LuisJimenez19">Luis Angel</a>.
-    </div>
-
-
-    <div class="btn-back">
-      <a  href="" rel="noopener noreferrer" class="btn btn--active">↺ Home</a>
-  </div>
 
 
 
-  </footer>
-
-  
+    </footer>
 
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="/js/btnHome.js"></script>
-  <script src="./js/main.js"></script>
-  <script>
-    AOS.init(
-      {
-        duration:500,
-        once:true
-      }
-    );
-  </script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>F
+    <script src="/js/btnHome.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        AOS.init(
+            {
+                duration: 500,
+                once: true
+            }
+        );
+    </script>
 </body>
+
 </html>

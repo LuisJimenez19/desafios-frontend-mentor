@@ -1,0 +1,172 @@
+@use 'variables' as v;
+@use 'initial';
+@use 'header';
+
+body {
+    background-color: v.$Almost-White;
+    width: 100%;
+    min-width: 330px;
+    max-width: 1500px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+
+/* El header lo hago en un partial */
+
+/* Contenedor principal */
+.main-container {
+    width: 100%;
+
+    @media (min-width:768px) {
+
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: stretch;
+
+        margin: 50px auto;
+        width: 85%;
+
+    }
+
+    /* baner */
+    .hero {
+        background: url(../images/image-hero-mobile.png);
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+
+        @media (min-width:768px) {
+
+            background: url(../images/image-hero-desktop.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            width: 50%;
+            height: auto;
+            
+
+        }
+    }
+
+
+    .principal {
+
+        margin: 30px auto;
+        padding: 0 10px;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* <-----------------desktop--------------> */
+        @media (min-width:768px) {
+            text-align: left;
+
+            padding-right: 100px;
+            width: 50%;
+            margin: auto;
+            align-items: flex-start;
+            
+
+            
+
+            .principal__title {
+                span {
+                    display: block;
+                }
+
+                text-align: justify;
+                font-size: 4.2em;
+                margin: 50px 0 70px;
+                font-weight: 700;
+            }
+
+            .principal__p {
+                width: 100%;
+                
+                line-height: 30px;
+                font-weight: 500;
+                font-size: 1em;
+            }
+            .principal__btn-learn{
+                margin: 70px 0 120px;
+            }
+
+        }
+
+
+        &__title {
+            font-size: 2em;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        &__p {
+            width: 95%;
+            margin: auto;
+            color: v.$Medium-Gray;
+            line-height: 25px;
+            font-weight: 500;
+            font-size: .9em;
+        }
+
+        &__btn-learn {
+            display: inline-block;
+            margin: 20px 0 30px;
+            
+            width: 160px;
+            
+            color: v.$Almost-White;
+            background-color: v.$Almost-Black;
+            font-weight: 700;
+
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid v.$Almost-Black;
+
+            transition: all .2s linear;
+
+            &:hover {
+                background-color: v.$Almost-White;
+                color: black;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    /* section marcas */
+    .marks {
+        margin: 0 auto 20px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .mark {
+            width: 70px;
+        }
+        @media (min-width:768px) {
+            margin: 0;
+            .mark {
+                width: 80px;
+            }
+        }
+
+    }
+}
+
+/* fin Contenedor principal */
+
+/* attribution */
+.attribution {
+    font-size: .9em;
+    text-align: center;
+    color: v.$Almost-Black;
+
+    a {
+        color: v.$Medium-Gray;
+    }
+}

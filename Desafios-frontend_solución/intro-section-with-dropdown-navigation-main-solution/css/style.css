@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Epilogue", sans-serif;
+}
+
+.header {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background para mobil (modal) */
+  /* clase para ocultar el modal*/
+  /* ubico el menu hamburgues y la x */
+}
+@media (min-width: 768px) {
+  .header__logo img {
+    width: 6em;
+  }
+}
+.header .nav-bakcground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.529);
+  display: flex;
+  justify-content: end;
+}
+@media (min-width: 768px) {
+  .header .nav-bakcground {
+    background-color: unset;
+    position: relative;
+    flex-grow: 1;
+  }
+}
+@keyframes show {
+  0% {
+    clip-path: polygon(100% 1%, 100% 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 99%);
+  }
+}
+.header .nav-bakcground .nav {
+  background-color: hsl(0deg, 0%, 98%);
+  height: 100%;
+  width: 60%;
+  padding: 100px 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: show 0.2s linear;
+  /* contenedor de los acrodeones */
+  /* cuando tenga esta clase se van a mostrar los links */
+  /* mostrar details */
+  /* girar arow icon */
+  /* links */
+  /* botones de login y register */
+}
+@media (min-width: 768px) {
+  .header .nav-bakcground .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: unset;
+    width: 100%;
+  }
+}
+.header .nav-bakcground .nav-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .header .nav-bakcground .nav-menu {
+    margin: 0 0 0 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: unset;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.header .nav-bakcground .nav__caption {
+  color: hsl(0deg, 0%, 41%);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__acordion {
+  position: relative;
+}
+.header .nav-bakcground .nav__caption:hover, .header .nav-bakcground .nav__summary--expanded {
+  color: hsl(0deg, 0%, 8%);
+  font-size: 1.05em;
+}
+.header .nav-bakcground .nav__summary--expanded + .nav__links {
+  height: auto;
+  border-bottom: 1px solid hsl(0deg, 0%, 41%);
+  transition: all 0.2s linear;
+  animation: showDetails 0.2s ease-in;
+}
+@media (min-width: 768px) {
+  .header .nav-bakcground .nav__summary--expanded + .nav__links {
+    position: absolute;
+    width: 150px;
+    top: 30px;
+    right: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px hsla(0deg, 0%, 58%, 0.276);
+    background-color: hsl(0deg, 0%, 98%);
+  }
+}
+@keyframes showDetails {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.header .nav-bakcground .nav__summary--expanded > .icon-arrow {
+  transform: rotate(-90deg);
+}
+.header .nav-bakcground .nav .icon-arrow {
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__links {
+  /* escondido */
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__link {
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__link:first-child {
+  margin-top: 30px;
+}
+.header .nav-bakcground .nav__link:last-child {
+  margin-bottom: 30px;
+}
+.header .nav-bakcground .nav__link:hover {
+  transform: scale(1.05);
+}
+.header .nav-bakcground .nav .link-icon {
+  width: 1.1em;
+}
+.header .nav-bakcground .nav .link-anchor {
+  color: hsl(0deg, 0%, 41%);
+  font-size: 0.9em;
+}
+.header .nav-bakcground .nav__btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .header .nav-bakcground .nav__btns {
+    flex-direction: row;
+    max-width: 250px;
+  }
+}
+.header .nav-bakcground .nav__btns .nav__btn {
+  width: 100%;
+  color: hsl(0deg, 0%, 41%);
+  font-size: 0.9em;
+  padding: 10px 0;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__btns .nav__btn:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+.header .nav-bakcground .nav__btns .nav__registerBtn {
+  border: 1px solid hsl(0deg, 0%, 41%);
+  border-radius: 15px;
+  transition: all 0.2s linear;
+}
+.header .nav-bakcground .nav__btns .nav__registerBtn:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+.header .d-none {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header .d-none {
+    display: unset;
+  }
+}
+.header__icons-bar {
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1;
+  z-index: 100;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.header__icons-bar:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .header__icons-bar {
+    display: none;
+  }
+}
+.header__icon-menu, .header__icon-close {
+  width: 30px;
+  height: 20px;
+  grid-column: 1;
+  grid-row: 1;
+  display: none;
+}
+.header .icon--active {
+  transition: all 0.2s linear;
+  display: unset;
+  animation: showIcon 0.3s normal;
+}
+@keyframes showIcon {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+body {
+  background-color: hsl(0deg, 0%, 98%);
+  width: 100%;
+  min-width: 330px;
+  max-width: 1500px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+/* El header lo hago en un partial */
+/* Contenedor principal */
+.main-container {
+  width: 100%;
+  /* baner */
+  /* section marcas */
+}
+@media (min-width: 768px) {
+  .main-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    margin: 50px auto;
+    width: 85%;
+  }
+}
+.main-container .hero {
+  background: url(../images/image-hero-mobile.png);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+@media (min-width: 768px) {
+  .main-container .hero {
+    background: url(../images/image-hero-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    height: auto;
+  }
+}
+.main-container .principal {
+  margin: 30px auto;
+  padding: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* <-----------------desktop--------------> */
+}
+@media (min-width: 768px) {
+  .main-container .principal {
+    text-align: left;
+    padding-right: 100px;
+    width: 50%;
+    margin: auto;
+    align-items: flex-start;
+  }
+  .main-container .principal .principal__title {
+    text-align: justify;
+    font-size: 4.2em;
+    margin: 50px 0 70px;
+    font-weight: 700;
+  }
+  .main-container .principal .principal__title span {
+    display: block;
+  }
+  .main-container .principal .principal__p {
+    width: 100%;
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 1em;
+  }
+  .main-container .principal .principal__btn-learn {
+    margin: 70px 0 120px;
+  }
+}
+.main-container .principal__title {
+  font-size: 2em;
+  margin: 20px 0;
+  font-weight: 700;
+}
+.main-container .principal__p {
+  width: 95%;
+  margin: auto;
+  color: hsl(0deg, 0%, 41%);
+  line-height: 25px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+.main-container .principal__btn-learn {
+  display: inline-block;
+  margin: 20px 0 30px;
+  width: 160px;
+  color: hsl(0deg, 0%, 98%);
+  background-color: hsl(0deg, 0%, 8%);
+  font-weight: 700;
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid hsl(0deg, 0%, 8%);
+  transition: all 0.2s linear;
+}
+.main-container .principal__btn-learn:hover {
+  background-color: hsl(0deg, 0%, 98%);
+  color: black;
+  cursor: pointer;
+}
+.main-container .marks {
+  margin: 0 auto 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-container .marks .mark {
+  width: 70px;
+}
+@media (min-width: 768px) {
+  .main-container .marks {
+    margin: 0;
+  }
+  .main-container .marks .mark {
+    width: 80px;
+  }
+}
+
+/* fin Contenedor principal */
+/* attribution */
+.attribution {
+  font-size: 0.9em;
+  text-align: center;
+  color: hsl(0deg, 0%, 8%);
+}
+.attribution a {
+  color: hsl(0deg, 0%, 41%);
+}
+
+/*# sourceMappingURL=style.css.map */

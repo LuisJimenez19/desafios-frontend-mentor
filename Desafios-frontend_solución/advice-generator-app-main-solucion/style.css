@@ -1,0 +1,225 @@
+/* Variables */
+:root{
+   /*  ## Colors */
+
+   /*  ### Primary */
+
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+
+   /*  ### Neutral */
+
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    
+
+    /* Typography 28px */
+    --font: 'Manrope', sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    position: relative;
+    font-family: var(--font);
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--Light-Cyan);
+    /* Para que se centre */
+    width: 100vw;  
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--Dark-Blue);
+}
+
+/* Card */
+
+.card-container{
+
+    width: 85%;
+    min-width: 330px;
+    max-width: 540px;
+    /* height: 350px; */
+
+    
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 10px;
+    text-align: center;
+
+    margin-bottom: 100px; /* para el footer, por si el contenido es muy grande */
+}
+/* fin card */
+
+
+
+/* section consejo */
+.advice{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 20px auto;
+    
+}
+
+
+.advice__title{
+    font-size: .5em;
+    color: var(--Neon-Green);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0 30px;
+
+    animation: aparecer .5s ease-in-out;
+
+}
+
+.advice__paragraph{
+    font-size: 1em;
+    animation: aparecer .5s ease-in-out;
+}
+/* Animación para cuando aparezca */
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* fin section consejo */
+
+
+/* wave */
+.wave{
+    content: url(./images/pattern-divider-mobile.svg);
+    
+    margin: 20px auto;
+}
+/* fin wave */
+
+
+
+/* btn generator */
+.btnGenerator{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 40px auto -35px;
+    background-color: var(--Neon-Green);
+    background-image: url(./images/icon-dice.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: all .1s linear;
+}
+
+.btnGenerator:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--Neon-Green);
+    transform: scale(1.1);
+}
+.btnGenerator--active{
+    animation: rotar .3s ease-in-out;
+}
+@keyframes rotar {
+
+    0%{
+        transform: rotate(0) ;
+    }
+
+    50%{
+        transform: rotate(180deg) scale(.9);
+    }
+
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+    
+}
+
+/* fin btn generator */
+
+
+/* footer */
+.attribution{
+    
+    text-align: center;
+    width: 90%;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+}
+
+.attribution a{
+    text-decoration: none;
+    color: var(--Grayish-Blue);
+}
+
+.attribution a:hover{
+    color: var(--Neon-Green);
+}
+/* fin footer */
+
+
+/* Modal error */
+
+.errorModal-background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.569);
+
+    display: grid;
+    place-content: center;
+}
+
+.errorModal{
+    width: 300px;
+    height: 200px;
+    padding: 10px 40px;
+    background-color: var(--Light-Cyan);
+    border-radius: 20px;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.error{
+    color: rgb(200, 30, 30);
+    font-size: .8em;
+    font-family: monospace;
+}
+
+.d-none{
+    display: none;
+}
+/*fin Modal error */
+
+/* <-----------------------------------desktop-------------------------> */
+@media (min-width:800px) {
+    body{
+        font-size: 28px;  /* aL usar medidas relaticas, solo cambio la del body asi cambian las demas */
+    }
+    .wave{
+        content: url(./images/pattern-divider-desktop.svg);
+    }
+}
