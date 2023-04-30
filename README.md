@@ -8,6 +8,8 @@ Layaout responsive.
 
 
 - En Movil
+
+
 ![Screen Shot 30-04-2023 at 3 06 p  m](https://user-images.githubusercontent.com/102745510/235369179-8136a552-d5dd-4fbd-b90b-0c27a2ecc90a.png)
 
 Creado todo con las 3 tecnologías bases, lo uso para ver el progreso que he tenido.

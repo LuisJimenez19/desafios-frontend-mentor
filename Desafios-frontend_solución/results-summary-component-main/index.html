@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Results summary component</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="result-container">
+        <h2 class="result__title">Your Result</h2>
+        <div class="result__porcentaje circle">
+          <h2 id="result-score" class="large">76</h2>
+          <div class="small">of 100</div>
+        </div>
+        <div>
+          <h2 class="result__adj">Great</h2>
+          <p class="overview">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+      </div>
+
+      <div class="summary-container">
+        <h3 class="summary__tile">Summary</h3>
+        <div class="categories-container"></div>
+
+        <a class="btn-continue" href="#">Continue</a>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://luisjimenez19.github.io/desafios-frontend-mentor/"
+        >Luis Ángel</a
+      >.
+      <div class="btn-back">
+        <p
+          style="cursor: pointer"
+          rel="noopener noreferrer"
+          class="btn btn--active"
+        >
+          ↺ Home
+        </p>
+      </div>
+    </div>
+    <script src="../btnHome.js"></script>
+  </body>
+</html>
