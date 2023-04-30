@@ -24,6 +24,7 @@ body{
     min-height: 100vh;
     margin: auto;
     font-family: sans-serif;
+    font-family: 'Roboto Slab', serif;
 
     color: #fff;
 
@@ -130,6 +131,18 @@ ul{
 }
 
 
+/* <---------advice----------> */
+.container-advice{
+    /* border: 1px solid; */
+    text-align: center;
+    font-size: 16px;
+    align-self: flex-end;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(180deg, #00000000, #0000000c );
+    padding: 20px;
+}
+
 /* <-------------------------------------------------------------estilos de las imagenes y sus animaciones (css,html, js)-------------------------------------------------> */
 .hero__images{
     
@@ -158,6 +171,7 @@ ul{
         margin: unset;
         height: 350px;
     }
+   
     
 }
 @media (min-width:1000px) {
@@ -312,6 +326,8 @@ ul{
 
     transition: all .3s linear;
 
+    max-width: 800px;
+    margin-left: auto;
 }
 
 
@@ -381,6 +397,14 @@ ul{
 }
 
 
+/* <----------section-react----------------> */
+.title-react{
+    font-size: 2em;
+    text-align: center;
+    background: linear-gradient(180deg, #00000000, #0000001d );
+    padding: 20px;
+}
+
 
 /* <-----------------esitlos del footer--------------------------------> */
 
@@ -437,16 +461,10 @@ ul{
 .link--active{
     
     position: absolute;
-    
-    
-    font-weight: bold;
-    
-    
 
+    font-weight: bold;
     width: max-content;
     text-align: center;
-
-    
 
     transform: translateY(-50%) scale(0);
     transition: all .15s linear;
@@ -501,6 +519,10 @@ ul{
         width: 300px;
         
     }
+    .container-advice{
+        font-size: 20px;
+        text-align: right;
+    }
 
 
 
@@ -529,7 +551,11 @@ ul{
         
     }
    /* --------fin her---------------- */
-
+    /* section react */
+    .title-react{
+        font-size: 4em;
+        text-align: right;
+    }
 
    /* --------footer------------------- */
    .footer{
